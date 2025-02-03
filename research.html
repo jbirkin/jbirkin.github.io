@@ -1,147 +1,158 @@
 <!DOCTYPE HTML>
 <html>
-	<head>
-		<title>Research Interests - Jack Birkin, PhD</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+<head>
+    <title>Projects - Jack Birkin, PhD</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <link rel="stylesheet" href="assets/css/main.css"/>
+    <noscript>
+        <link rel="stylesheet" href="assets/css/noscript.css"/>
+    </noscript>
+</head>
+<body class="is-preload">
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+<!-- Wrapper -->
+<div id="wrapper">
 
-				<!-- Header -->
-					<header id="header">
-						<a href="index.html" class="logo">Jack Birkin</a>
-					</header>
+    <!-- Header -->
+    <header id="header">
+        <a href="index.html" class="logo">Jack Birkin</a>
+    </header>
 
-				<!-- Nav -->
-					<nav id="nav">
-						<ul class="links">
-							<li><a href="index.html">Home</a></li>
-							<li class="active"><a href="research.html">Research</a></li>
-							<li><a href="code.html">Code</a></li>
-							<li><a href="CV_birkin_24-01-25.pdf">CV</a></li>
-							<li><a href="resume_birkin_25-01-26.pdf">Résumé</a></li>
-						</ul>
-						<ul class="icons">
-							<li><a href="mailto:jbirkin@tamu.edu" class="fa fa-envelope" style="font-size:22px">
-								<span class="label"></span></a></li>
-							<li><a href="https://github.com/jbirkin" class="icon brands fa-github">
-								<span class="label">GitHub</span></a></li>
-						</ul>
-					</nav>
+    <!-- Nav -->
+    <nav id="nav">
+        <ul class="links">
+            <li><a href="index.html">Home</a></li>
+            <li class="active"><a href="research.html">Projects</a></li>
+            <li><a href="code.html">Code</a></li>
+            <li><a href="CV_birkin_24-01-25.pdf">CV</a></li>
+            <li><a href="resume_birkin_25-01-26.pdf">Résumé</a></li>
+        </ul>
+        <ul class="icons">
+            <li><a href="mailto:jbirkin@tamu.edu" class="fa fa-envelope" style="font-size:22px">
+                <span class="label"></span></a></li>
+            <li><a href="https://github.com/jbirkin" class="icon brands fa-github">
+                <span class="label">GitHub</span></a></li>
+        </ul>
+    </nav>
 
-				<!-- Main -->
-					<div id="main">
+    <!-- Main -->
+    <div id="main">
 
-						<!-- Post -->
-							<section class="post">
-								<header class="major">
-									<h1>Research Interests</h1>
-									<p>Below is a summary of my current research projects:</p>
-								</header>
+        <!-- Post -->
+        <section class="post">
+            <header class="major">
+                <h1>Data-driven astronomy projects</h1>
+                <!--                <p>Below is a summary of my current research projects:</p>-->
+            </header>
 
-								<hr />
+            <hr/>
 
-								<h2>TEMPLATES and SPT-SMG collaborations</h2>
-									<p>I am currently involved with the JWST Early Release Science Programme
-										<a href="https://sites.google.com/view/jwst-templates/">TEMPLATES: Targeting Extremely
-											Magnified Panchromatic Lensed Arcs and their Extended Star Formation</a>, an on-going
-										programme designed to spatially resolve the star formation in four galaxies at the peak of
-										cosmic star formation (see the figure below, by
-										<a href="https://astro.illinois.edu/directory/profile/kphadke2">Kedar Phadke</a> at the
-										University of Illinois).
-										These galaxies are gravitationally lensed, meaning that they appear much
-										brighter than they do intrinsically, and they can be observed at much higher spatial
-										resolutions. Overall, this allows an incredibly detailed study of the galaxies. My current
-										project involves using NIRSpec observations of two of the four TEMPLATES targets, which are
-										dusty star-forming galaxies selected by the South Pole Telescope (SPT). I am using the Hα and
-										[NII] emission lines to study how the fraction of metals in the interstellar medium (ISM)
-										varies spatially across the source.</p>
+            <h2>3-D modelling of JWST data</h2>
+            <p>I am a member of the international collaboration <a
+                    href="https://sites.google.com/view/jwst-templates/">TEMPLATES</a>,
+               an on-going programme designed to spatially resolve the star formation in four galaxies at the peak of
+               cosmic star formation. These galaxies are gravitationally lensed, meaning that they appear much
+               brighter than they do intrinsically, and they can be observed at much higher spatial
+               resolutions. Overall, this allows an incredibly detailed study of the galaxies.
+               As an expert in near-infrared IFU obeservations, my role is to extract the relevant data features to
+               give a complete picture of the underlying systems while effectively visualizing the data. To this end,
+               I developed a powerful <a href="https://github.com/jbirkin/cubespecfit">open-source Python module</a>
+               which simultaneously models the emission from the galaxy and
+               produces a complete visual of the entire cube. I utilized this tool to produce <a
+                        href="https://ui.adsabs.harvard.edu/abs/2023ApJ...958...64B/abstract">this
+                                                                                              peer-reviewed
+                                                                                              publication</a> in the
+               Astrophysical Journal, which has been cited over 20 times.
+            </p>
 
-									<p>You can read the paper, published in ApJ, <a href="https://ui.adsabs.harvard.edu/abs/2023ApJ...958...64B/abstract">here.</a></p>
+            <div class="image main">
+                <img src="images/birkin23_plots.png" alt=""/>
+                <p><i>Left: Comparing measurements of system properties with existing scaling relations. Right:
+                      Identifying trends between galaxy dust mass and galaxy dust enrichment.</i></p>
+            </div>
 
-									<p>One of the primary goals of TEMPLATES is to create and share resources for the community,
-									that will assist in working with the plethora of spectacular data which has become available
-									in the early phase of JWST. Our data reduction cookbooks can be found
-										<a href="https://github.com/JWST-Templates/jwst_templates">here</a>, and some other useful
-									tools we have developed can be found
-										<a href="https://github.com/JWST-Templates/jwst_templates">here</a>.</p>
-								<div class="image main"><img src="images/templates_family_portrait.png" alt="" /></div>
+            <hr/>
 
-								<hr />
+            <h2>Aggregating and stacking of spectral data for model selection</h2>
+            <p>As a member of the international
+                <a href="https://www.alma-cristal.info/">CRISTAL: [CII] Resolved
+                                                         ISM in Star-Forming Galaxies with ALMA</a> collaboration,
+               my role is to combine the 3-D data from CRISTAL to boost the signal-to-noise ratio and identify faint
+               emission features. For this project I have utilized dimensionality reduction techniques, data
+               normalization, MCMC model fitting, model selection, bootstrap/jacknife resampling and feature
+               engineering.
+            </p>
+            <div class="image main">
+                <img src="images/birkin25_plots.png" alt=""/>
+                <p><i>Left: Aggregated and combined spectral data for 15 sources. The data are well-modelled by
+                      two Gaussian components. Right: 2-D emission maps extracted from the 3-D data cubes.</i></p>
+            </div>
 
-								<h2>CRISTAL collaboration</h2>
-									<p>I am also a member of the
-										<a href="https://www.alma-cristal.info/">CRISTAL: [CII] Resolved
-											ISM in Star-Forming Galaxies with ALMA</a> collaboration, an ALMA
-									Cycle-8 Large Program that observed 19 star-forming galaxies at z~4-5 in [CII]
-									line and dust continuum emission. This sample was selected to include galaxies that
-									are representative of the typical population at this epoch, around 1.5 billion years
-									after the Big Bang. Future observations with JWST will also contribute heavily to
-									the study of this sample. The four scientific areas we are aiming to study are shown
-									below. My work is primarily focused on detecting outflows.</p>
-								<div class="image main"><img src="images/cristal_goals.png" alt="" /></div>
+            <hr/>
 
-								<hr />
+            <h2>Data-Driven Insights into Turbulent Galactic Disks</h2>
+            <p>In grad school I led the processing and analysis of a ~300GB Large Program, with the goal of
+               understanding
+               the 2-D kinematics of highly star-forming systems. The data processing and cleaning involved PCA
+               analysis and sigma clipping to reduce noise. After cross-matching the data with existing databases, I
+               applied an adaptive binning technique to model the 3-D data and extract 1-D rotation curves for the
+               galaxies. Below is a visualization of the rotation fields of each galaxy in the sample, plotted as a
+               function of two basic system properties. <a
+                        href="https://ui.adsabs.harvard.edu/abs/2023arXiv230105720B/abstract">This work was published in
+                                                                                              the Monthly Notices of the
+                                                                                              Royal
+                                                                                              Astronomical Society, and
+                                                                                              has been cited over a
+                                                                                              dozen times.</a></p>
 
-								<h2>Dusty star-forming galaxy kinematics</h2>
-									<p>One of the most pressing questions regarding the dusty star-forming galaxy population is of how
-										their rapid star formation is triggered: are they predominantly merger-driven starbursts? Or
-										can smooth gas accretion from the intergalactic medium (IGM) be sufficient to generate the
-										observed star-formation rates? To address this we study galaxy kinematics, which tells us about
-										the internal motions of the system. We use resolved observations of the Hα emission line
-										to measure galaxy rotational velocities and velocity dispersions, and compare the two to draw
-										conclusions about how dusty star-forming galaxies are supported. In general, we find that they
-										are rapidly rotating systems that also experience high levels of turbulence. This turbulence
-										could be driven by ongoing star formation, infall of cold gas, or mergers and interactions with
-										other galaxies.</p>
+            <div class="image main"><img src="images/kaoss_poster.png" alt=""/></div>
 
-									<p style="margin-bottom:2cm;">This work is part of our ongoing Large Programme with the K-band Multi-Object Spectrograph
-										(KMOS) - known as "KMOS-ALMA Observations of Submillimetre Sources", or "KAOSS" for short.
-										This LP will eventually have involved around 400 hours of KMOS time, and has already produced
-										one of the largest samples of resolved kinematics for high-redshift dusty star-forming
-										galaxies.</p>
+            <hr/>
 
-									<p>You can read the paper <a href="https://ui.adsabs.harvard.edu/abs/2023arXiv230105720B/abstract">here.</a></p>
-								<div class="image main"><img src="images/kaoss_poster.png" alt="" /></div>
+            <h2>Molecular gas in dusty star-forming galaxies</h2>
+            <p>Leveraging data from state-of-the-art facilities, I modelled the radio emission of early-Universe
+               galaxies to provide insights into their underlying properties. To prepare this dataset I utilized
+               advanced algorithmic cleaning and feature extraction from multi-baseline observations, which I
+               modelled using Bayesian Inference. I combined my measurements with a wide variety of archival data
+               using catalog matching techniques, which enhanced the robustness of the statistical conclusions I was
+               able to draw. <a href="https://ui.adsabs.harvard.edu/abs/2021MNRAS.501.3926B/abstract">This work was
+                                                                                                      published in
+                                                                                                      the Monthly
+                                                                                                      Notices of the
+                                                                                                      Royal
+                                                                                                      Astronomical
+                                                                                                      Society, and
+                                                                                                      has been cited
+                                                                                                      over 80 times.</a>
+            </p>
 
-								<hr />
+            <div class="image main"><img src="images/redshifted_spectra.png" alt=""/>
+                <p><i>Visualization of the 2-D spectra of the entire galaxy sample. The spectra have been corrected to
+                      their rest-frame frequencies and the relevant emission features have been highlighted.</i></p>
+            </div>
+        </section>
 
-								<h2>Molecular gas in dusty star-forming galaxies</h2>
-									<p>As the fuel for star formation, molecular gas is a highly important component of galaxies to
-										study. For high-redshift galaxies the most commonly used molecular gas tracer is carbon
-										monoxide (CO), which emits at ~mm wavelengths. We recently detected CO emission in 47 DSFGs
-										using ALMA and NOEMA, providing one of the largest samples currently available for this
-										population. The data show that the dusty population typically contains huge reservoirs of
-										molecular gas, which we expect to be consumed on short timescales. We also find evidence to
-										suggest that these galaxies are related to the most massive elliptical galaxies in the local
-									Universe. </p>
+    </div>
 
-									<p>You can read the paper, published in MNRAS, <a href="https://ui.adsabs.harvard.edu/abs/2021MNRAS.501.3926B/abstract">here.</a></p>
-								<div class="image main"><img src="images/redshifted_spectra.png" alt="" /></div>
-							</section>
+    <!-- Copyright -->
+    <div id="copyright">
+        <ul>
+            <li>&copy; Jack Birkin</li>
+            <li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+        </ul>
+    </div>
 
-					</div>
+</div>
 
-				<!-- Copyright -->
-					<div id="copyright">
-						<ul><li>&copy; Jack Birkin</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
-					</div>
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.scrollex.min.js"></script>
+<script src="assets/js/jquery.scrolly.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
 
-			</div>
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-
-	</body>
+</body>
 </html>
