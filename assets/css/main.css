@@ -4722,6 +4722,7 @@ input, select, textarea {
 
 .project-box {
     background-color: #f4f4f4;
+    height: auto;
     border: 1px solid #ddd;
     padding: 20px;
     border-radius: 10px;
