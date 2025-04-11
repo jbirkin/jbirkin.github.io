@@ -4711,3 +4711,42 @@ input, select, textarea {
   font-style: italic;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
 }
+
+/* Project Grid Styles */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    gap: 20px; /* space between boxes */
+    margin-top: 20px;
+}
+
+.project-box {
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+}
+
+.project-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.project-box img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.project-box h3 {
+    margin-top: 15px;
+    font-size: 1.25em;
+}
+
+.project-box p {
+    color: #666;
+    font-size: 0.9em;
+    margin-top: 10px;
+}
