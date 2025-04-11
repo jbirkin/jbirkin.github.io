@@ -4722,7 +4722,6 @@ input, select, textarea {
 
 .project-box {
     background-color: #f4f4f4;
-    height: auto;
     border: 1px solid #ddd;
     padding: 20px;
     border-radius: 10px;
@@ -4736,7 +4735,7 @@ input, select, textarea {
 }
 
 .project-box img {
-    /* width: 100%; */
+    width: 100%;
     height: auto;
     border-radius: 10px;
 }
