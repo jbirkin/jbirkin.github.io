@@ -1,0 +1,121 @@
+body {
+  background: #2c2c2c;
+  color: #f0f0f0;
+  font-family: 'Merriweather', serif;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.page-header {
+  background: #191919;
+  padding: 2rem;
+  text-align: center;
+  color: #eee;
+  border-bottom: 1px solid #444;
+}
+
+.page-header h1 {
+  margin: 0 auto;
+  font-size: 2.5rem;
+  text-shadow:
+    -0.75px -0.75px 0 #6c5ce7,
+     0.75px -0.75px 0 #6c5ce7,
+    -0.75px  0.75px 0 #6c5ce7,
+     0.75px  0.75px 0 #6c5ce7;
+  max-width: 80%;
+  text-align: center;
+}
+
+.page-header h2 {
+  text-shadow:
+    -0.25px -0.25px 0 #6c5ce7,
+     0.25px -0.25px 0 #6c5ce7,
+    -0.25px  0.25px 0 #6c5ce7,
+     0.25px  0.25px 0 #6c5ce7;
+}
+
+.main-content {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #1e1e1e;
+  border-radius: 6px;
+  box-shadow: 1px 1px 10px #6c5ce7;
+}
+
+a {
+  color: #c0392b;
+}
+
+a:hover {
+  color: #6c5ce7;
+  text-decoration: underline;
+}
+
+.back-link {
+  display: inline-block;
+  margin-top: 2rem;
+  font-size: 0.9em;
+  font-style: italic;
+  padding: 6px 12px;
+  background-color: #f8f8f8;
+  color: #333;
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+.back-link:hover {
+  color: #6c5ce7;
+  text-shadow: #6c5ce7 1px 0 10px;
+}
+
+.floating-back-link {
+  position: fixed;
+  top: 3rem;
+  left: 1rem;
+  transform: translateY(-50%);
+  font-size: 0.75rem;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 0.4rem 0.6rem;
+  border-radius: 6px;
+  color: #aaa;
+  text-decoration: none;
+  text-align: center;
+  font-style: italic;
+  z-index: 999;
+  transition: all 0.2s;
+  line-height: 1.2;
+    text-shadow:
+    -0.25px -0.25px 0 #6c5ce7,
+     0.25px -0.25px 0 #6c5ce7,
+    -0.25px  0.25px 0 #6c5ce7,
+     0.25px  0.25px 0 #6c5ce7;
+}
+
+.floating-back-link:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+.figure {
+  margin: 2rem auto;
+  text-align: center;
+  max-width: 90%;
+}
+
+.figure img {
+  width: 80%;
+  height: auto;
+  border-radius: 6px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+}
+
+.figure figcaption {
+  font-size: 0.9rem;
+  color: #bbb;
+  font-style: italic;
+  margin-top: 0.5rem;
+  text-align: center;
+}
+
+

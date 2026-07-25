@@ -1,4 +1,10 @@
-# Exploring High-z SMGs: Catalog Matching, SQL Queries, and Confusion Limits
+---
+layout: post
+title: "Hunting for the most distant dusty galaxies: Catalog Matching and SQL Queries"
+date: 2025-02-14
+categories: data-science
+author: Jack Birkin
+---
 
 In my journey to identify high-redshift (z \~7 and beyond) submillimeter galaxies (SMGs), I’ve been working with multi-wavelength catalogs from **SPT3G, MeerKAT, and SPIRE**. Here’s a summary of what I’ve learned and how I’ve used SQL to filter and explore these datasets.
 
@@ -65,6 +71,6 @@ When using a polygon footprint from a SPIRE image, I learned to exclude internal
 
 ## 💡 Key Takeaways
 
-- ✅ **SPIRE dropouts** are valuable high-z SMG candidates.
+- ✅ **SPIRE and MeerKAT dropouts** are valuable high-z SMG candidates.
 - ✅ Be cautious with **sources below the SPIRE confusion limit**—use priors or cross-matches.
 - ✅ Use **SQL queries with spatial filters** to refine your catalog matches.
