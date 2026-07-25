@@ -4755,7 +4755,9 @@ input, select, textarea {
     margin-top: 10px;
 }
 
-.code-box {
+/* .info-box shares the .code-box look for entries that aren't links,
+   so it deliberately gets no :hover treatment. */
+.code-box, .info-box {
   display: block;
   background: linear-gradient(135deg, #f9f9f9, #eaeaea);
   color: inherit;

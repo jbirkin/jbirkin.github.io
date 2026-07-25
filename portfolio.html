@@ -44,8 +44,44 @@
         <!-- Post Grid -->
         <section class="post">
             <header class="major">
-                <h1>Data-driven astronomy projects</h1>
+                <h1>Projects</h1>
             </header>
+
+            <h2>AI &amp; engineering</h2>
+
+            <p>Fam&#275;lia's codebase is private, so the work below is described rather than linked.</p>
+
+            <div class="info-box">
+                <h3>Amelia &mdash; per-member recipe adaptation</h3>
+                <p>A LangGraph state graph served over FastAPI on Azure that rewrites a recipe for everyone in a
+                   household at once. Recipes are represented as a knowledge graph, so a substitution propagates
+                   through shared cooking steps rather than stopping at the ingredient list. Members are grouped by
+                   dietary fingerprint, so one recipe produces several safe variants without repeating the work for
+                   each person.</p>
+            </div>
+
+            <div class="info-box">
+                <h3>Retrieval over a clinical nutrition reference</h3>
+                <p>A retrieval system built end to end over a 3,500-page clinical nutrition manual: PDF ingestion
+                   that preserves tables, chunking that follows the document's own structure, embeddings, and vector
+                   similarity search in Postgres via pgvector. The dietitian-facing chatbot answers from that source
+                   rather than from the model's own recall.</p>
+            </div>
+
+            <div class="info-box">
+                <h3>Testing and observability</h3>
+                <p>As the only AI engineer on the product, I put the pipeline under test and made it observable
+                   &mdash; a hermetic pytest suite gating every deploy, end-to-end tracing across the pipeline with
+                   LangSmith, and an offline evaluation harness that replays captured production cases and compares
+                   graded scores across commits.</p>
+            </div>
+
+            <hr/>
+
+            <h2>Astronomy &amp; data science</h2>
+
+            <p>From my research years. Fuller detail, including papers and data, is on the
+               <a href="astro.html">astronomy page</a>.</p>
 
             <!-- Project Grid -->
             <div class="project-grid">
@@ -89,12 +125,12 @@
                     <p style="font-size: 0.9em; color: #888; font-style: italic;">Published: February 2025</p>
                 </a>
 
-                <a href="#" class="project-box">
-                    <img src="images/redshifted_spectra.png" alt="Molecular Gas in Galaxies"/>
+                <a href="https://ui.adsabs.harvard.edu/abs/2021MNRAS.501.3926B/abstract" class="project-box">
+                    <img src="images/redshifted_spectra.png" alt="Redshifted CO spectra from distant galaxies"/>
                     <h3>Molecular Gas in Dusty Star-Forming Galaxies</h3>
-                    <p>Modeling the carbon monoxide emission from early-Universe galaxies.The
+                    <p>Modeling the carbon monoxide emission from early-Universe galaxies. The
                        first half of my PhD thesis.</p>
-                    <p style="font-size: 0.9em; color: #888; font-style: italic;">Published: February 2025</p>
+                    <p style="font-size: 0.9em; color: #888; font-style: italic;">Published: MNRAS, 2021</p>
                 </a>
 
             </div> <!-- End of Project Grid -->

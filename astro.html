@@ -57,7 +57,6 @@
             <nav>
                 <a href="#analysis-tools">Analysis Tools</a> ·
                 <a href="#data">Data & Catalogs</a> ·
-                <a href="#guides">Guides & Tutorials</a> ·
                 <a href="#publications">Papers & Figures</a> ·
                 <a href="#apps">Interactive Apps</a>
             </nav>
@@ -165,6 +164,34 @@
 
             <h2 id="analysis-tools">Analysis tools</h2>
 
+            <p>Both are documented in their READMEs, with worked examples. The same repositories are listed,
+               framed as software rather than as research tools, on the <a href="code.html">code page</a>.</p>
+
+            <ul>
+                <li><b><a href="https://github.com/jbirkin/cubespecfit">cubespecfit</a></b> &mdash; spaxel-by-spaxel
+                    emission-line fitting for integral-field and interferometric data cubes. Fits a chosen line
+                    model pixel by pixel, with adaptive spatial binning to hold signal-to-noise up in the faint
+                    outskirts, and produces diagnostic maps so you can see where a fit has gone wrong. Used for the
+                    metallicity maps in Birkin et al. (2023) and the kinematics in Birkin et al. (2024).</li>
+
+                <li><b><a href="https://github.com/jbirkin/alma-stacking-pipeline">alma-stacking-pipeline</a></b>
+                    &mdash; aligns, normalizes and stacks low-S/N spectra across a sample to bring out features too
+                    weak to detect in any single source. Includes MCMC line fitting, dropout filtering, bootstrap
+                    error estimation and catalog utilities. Used for the [CII] outflow stack in Birkin et al.
+                    (2025).</li>
+            </ul>
+
+            <hr/>
+
+            <h2 id="apps">Interactive apps</h2>
+
+            <ul>
+                <li><b><a href="https://github.com/jbirkin/image-viewer-dash">image-viewer-dash</a></b> &mdash; a
+                    Dash/Python application for stepping through multi-wavelength cutouts of SPT3G sources
+                    alongside MeerKAT and SPIRE imaging, so a distributed team can inspect and annotate candidates
+                    in one place instead of passing files around. Deployed on AWS during the survey; the repository
+                    includes what you need to run it locally against your own catalog.</li>
+            </ul>
 
             <hr/>
 
