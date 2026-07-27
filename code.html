@@ -63,22 +63,20 @@
             <hr/>
 
             <a href="https://github.com/jbirkin/cubespecfit" class="code-box">
-                <h2>Analysis and modeling of multidimensional datasets</h2>
-                <p>In the modern era of data-driven research, resolving the internal structures of distant
-                   galaxies is becoming increasingly feasible and essential for understanding their
-                   properties. My work involves analyzing complex, multidimensional datasets that combine
-                   spatial and spectral information, effectively creating 3D maps of these galaxies. To
-                   facilitate this analysis, I developed a custom tool for modeling emission features on
-                   a pixel-by-pixel basis, enabling more detailed insights into the data.
-                </p>
+                <h2>cubespecfit &mdash; fitting models to 3-D data cubes</h2>
+                <p>A Python package for fitting an emission-line model independently at every pixel of a spectral
+                   data cube. It handles adaptive binning where the signal is weak, exposes a model interface so
+                   users can supply their own line profiles rather than editing the source, and emits diagnostic
+                   maps for checking where a fit has gone wrong. Written to be reused by collaborators, not just to
+                   make one paper's figures.</p>
             </a>
 
             <a href="https://github.com/jbirkin/alma-stacking-pipeline" class="code-box">
-                <h2>Signal normalization and aggregation</h2>
-                <p>
-                    A flexible pipeline for stacking and modeling [CII] spectra from multiple high-redshift galaxies.
-                    Includes MCMC model fitting, dropout filtering, bootstrap error estimation, and catalog utilities.
-                </p>
+                <h2>alma-stacking-pipeline &mdash; aggregating weak signals</h2>
+                <p>A pipeline for aligning, normalizing and combining many low signal-to-noise spectra so that
+                   features invisible in any single one become measurable. Includes MCMC model fitting, dropout
+                   filtering, bootstrap error estimation and catalog utilities, and ships a <code>setup.py</code> so
+                   it installs and runs somewhere other than the machine it was written on.</p>
             </a>
 
             <a href="https://github.com/jbirkin/image-viewer-dash" class="code-box">
