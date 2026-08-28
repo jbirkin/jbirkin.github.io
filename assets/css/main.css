@@ -4841,3 +4841,220 @@ input, select, textarea {
 
 .paper-box:hover {
 }
+/* ---------------------------------------------------------------
+   Portfolio modules
+   Project entries on portfolio.html. Structure follows the design
+   mockup: a metadata strip (index, period, status), a keyed rule,
+   then Problem / Approach / Outcome, tech chips and links.
+   Section colour distinguishes AI engineering from research.
+   --------------------------------------------------------------- */
+
+.pf-section-head {
+	display: flex;
+	align-items: baseline;
+	gap: 1rem;
+	flex-wrap: wrap;
+	padding-bottom: 0.7rem;
+	border-bottom: 2px solid var(--c-accent);
+	margin-bottom: 0.6rem;
+}
+
+	.pf-section-head h2 {
+		margin: 0;
+		font-size: 0.95rem;
+		letter-spacing: 0.18em;
+		color: var(--c-accent);
+	}
+
+	.pf-section-head .pf-section-note {
+		font-size: 0.8rem;
+		color: var(--c-ink-faint);
+		font-style: italic;
+	}
+
+	.pf-research .pf-section-head { border-bottom-color: var(--c-accent-2); }
+	.pf-research .pf-section-head h2 { color: var(--c-accent-2); }
+
+.pf-intro {
+	color: var(--c-ink-muted);
+	margin-bottom: 2.5rem;
+}
+
+/* Grid of modules. Hairline gaps read as an engineered surface
+   rather than floating cards. */
+.pf-grid {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 1px;
+	background: var(--c-border-soft);
+	border: 1px solid var(--c-border-soft);
+	margin-bottom: 3rem;
+}
+
+	.pf-grid.pf-grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+	.pf-module.pf-wide { grid-column: 1 / -1; }
+
+.pf-module {
+	background: var(--c-surface);
+	display: flex;
+	flex-direction: column;
+	transition: background 0.18s ease;
+}
+
+	.pf-module:hover { background: var(--c-surface-alt); }
+
+	.pf-module-meta {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 0.75rem;
+		padding: 0.7rem 1.25rem;
+		background: var(--c-surface-alt);
+		border-bottom: 1px solid var(--c-border-soft);
+		font-family: var(--f-display);
+		font-size: 0.6rem;
+		letter-spacing: 0.14em;
+		text-transform: uppercase;
+		color: var(--c-ink-fainter);
+	}
+
+	.pf-status {
+		white-space: nowrap;
+		border: 1px solid var(--c-border-card);
+		border-radius: 2px;
+		padding: 0.15rem 0.45rem;
+		color: var(--c-accent);
+	}
+
+		.pf-research .pf-status { color: var(--c-accent-2); }
+
+	.pf-module-rule { height: 2px; background: var(--c-border-card); }
+
+	.pf-module:hover .pf-module-rule { background: var(--c-accent); }
+	.pf-research .pf-module:hover .pf-module-rule { background: var(--c-accent-2); }
+
+	.pf-module-body {
+		padding: 1.4rem 1.25rem 1.25rem 1.25rem;
+		display: flex;
+		flex-direction: column;
+		gap: 0.9rem;
+		flex: 1;
+	}
+
+	.pf-module h3 {
+		margin: 0;
+		font-family: var(--f-body);
+		font-size: 1.35rem;
+		font-weight: 600;
+		letter-spacing: 0;
+		text-transform: none;
+		line-height: 1.15;
+		color: var(--c-ink-deep);
+	}
+
+	.pf-tagline {
+		font-size: 0.95rem;
+		color: var(--c-ink-soft);
+		font-style: italic;
+		line-height: 1.45;
+		margin-top: 0.3rem;
+	}
+
+	.pf-slots { display: flex; flex-direction: column; gap: 0.7rem; }
+
+		.pf-slots dt {
+			font-family: var(--f-display);
+			font-size: 0.56rem;
+			letter-spacing: 0.2em;
+			text-transform: uppercase;
+			color: var(--c-ink-fainter);
+			margin-bottom: 0.25rem;
+		}
+
+		.pf-slots dd {
+			margin: 0;
+			font-size: 0.9rem;
+			line-height: 1.55;
+			color: var(--c-ink-muted);
+		}
+
+	.pf-foot { margin-top: auto; padding-top: 0.4rem; }
+
+	.pf-chips {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.3rem;
+		margin-bottom: 0.9rem;
+	}
+
+		.pf-chips span {
+			font-family: var(--f-display);
+			font-size: 0.62rem;
+			letter-spacing: 0.06em;
+			color: var(--c-ink-faint);
+			border: 1px solid var(--c-border);
+			border-radius: 2px;
+			padding: 0.2rem 0.45rem;
+		}
+
+	.pf-links {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 1rem;
+		font-family: var(--f-display);
+		font-size: 0.78rem;
+	}
+
+		.pf-links a { border-bottom: 1px solid rgba(111, 208, 189, 0.35); }
+		.pf-links .pf-closed { color: var(--c-ink-fainter); font-style: italic; }
+
+/* Figures are matplotlib plots on white; inverting sits them on the
+   dark ground without regenerating the source images. Screenshots
+   must not be inverted. */
+.pf-plate {
+	background: var(--c-surface-sunk);
+	border-bottom: 1px solid var(--c-border-soft);
+	padding: 0;
+	overflow: hidden;
+}
+
+	.pf-plate img {
+		display: block;
+		width: 100%;
+		height: auto;
+		filter: invert(1) hue-rotate(180deg) saturate(0.85);
+	}
+
+.pf-stats {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: 1px;
+	background: var(--c-border-soft);
+	border: 1px solid var(--c-border-soft);
+	margin-bottom: 1px;
+}
+
+	.pf-stats > div {
+		background: var(--c-surface-alt);
+		padding: 1.1rem 1.25rem;
+	}
+
+	.pf-stat-n {
+		font-family: var(--f-display);
+		font-weight: 600;
+		font-size: 1.8rem;
+		line-height: 1;
+		color: var(--c-ink-deep);
+	}
+
+	.pf-stat-l {
+		font-size: 0.8rem;
+		line-height: 1.45;
+		color: var(--c-ink-faint);
+		margin-top: 0.35rem;
+	}
+
+@media screen and (max-width: 980px) {
+	.pf-grid, .pf-grid.pf-grid-3 { grid-template-columns: minmax(0, 1fr); }
+	.pf-stats { grid-template-columns: minmax(0, 1fr); }
+}
