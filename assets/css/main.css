@@ -5263,6 +5263,14 @@ input, select, textarea {
 	.sitebar-nav { gap: 1rem; font-size: 0.7rem; }
 }
 
+/* Body links on the dark ground need the accent, not inherited ink. */
+#main .post a {
+	color: var(--c-accent);
+	border-bottom-color: rgba(111, 208, 189, 0.35);
+}
+
+	#main .post a:hover { color: var(--c-accent-bright); }
+
 /* Page titles follow the mockup: EB Garamond, mixed case, no tracking,
    rather than the template's uppercase sans. */
 #main .post > header.major h1 {
@@ -5272,4 +5280,18 @@ input, select, textarea {
 	letter-spacing: 0;
 	text-transform: none;
 	color: var(--c-ink-deep);
+}
+
+/* The template's mobile nav panel is unused now that the site bar
+   carries its own links, and its toggle overlapped the bar. */
+#navPanelToggle, #navPanel { display: none !important; }
+
+/* Section heads wrap rather than squeeze at narrow widths. */
+@media screen and (max-width: 736px) {
+	.pf-section-head { flex-wrap: wrap; gap: 0.5rem 0.75rem; }
+	.pf-section-head h2 { font-size: 1.375rem; }
+	.pf-section-fill { display: none; }
+	.pf-section-note { flex-basis: 100%; }
+	.pf-head-title { padding: 1.75rem 1.5rem; }
+	.pf-head-title h1 { font-size: 2.25rem; }
 }
