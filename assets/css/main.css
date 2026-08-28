@@ -1,3 +1,6 @@
+@import url(fontawesome-all.min.css);
+@import url("https://fonts.googleapis.com/css?family=Merriweather:300,700,300italic,700italic|Source+Sans+Pro:900");
+
 :root {
 	/* Dark theme. Light palette kept below for reference. */
 	--c-surface: #0d1219;
@@ -47,9 +50,6 @@
 	--c-ink-soft: #666666;
 */
 
-@import url(fontawesome-all.min.css);
-@import url("https://fonts.googleapis.com/css?family=Merriweather:300,700,300italic,700italic|Source+Sans+Pro:900");
-
 /*
 	Massively by HTML5 UP
 	html5up.net | @ajlkn
@@ -85,7 +85,6 @@ body {
 ol, ul {
 	list-style: none;
 }
-
 
 blockquote, q {
 	quotes: none;
@@ -4823,7 +4822,6 @@ input, select, textarea {
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
   background: linear-gradient(135deg, var(--c-surface), var(--c-accent-wash));
 }
-
 
 .paper-box {
   display: block;
