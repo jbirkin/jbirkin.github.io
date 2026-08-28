@@ -1,54 +1,54 @@
 body {
-  background: #2c2c2c;
-  color: #f0f0f0;
+  background: #0a0f15;
+  color: #eef2f7;
   font-family: 'Merriweather', serif;
   line-height: 1.6;
   margin: 0;
 }
 
 .page-header {
-  background: #191919;
+  background: #0d1219;
   padding: 2rem;
   text-align: center;
-  color: #eee;
-  border-bottom: 1px solid #444;
+  color: #eef2f7;
+  border-bottom: 1px solid #222c37;
 }
 
 .page-header h1 {
   margin: 0 auto;
   font-size: 2.5rem;
   text-shadow:
-    -0.75px -0.75px 0 #6c5ce7,
-     0.75px -0.75px 0 #6c5ce7,
-    -0.75px  0.75px 0 #6c5ce7,
-     0.75px  0.75px 0 #6c5ce7;
+    -0.75px -0.75px 0 #e0c489,
+     0.75px -0.75px 0 #e0c489,
+    -0.75px  0.75px 0 #e0c489,
+     0.75px  0.75px 0 #e0c489;
   max-width: 80%;
   text-align: center;
 }
 
 .page-header h2 {
   text-shadow:
-    -0.25px -0.25px 0 #6c5ce7,
-     0.25px -0.25px 0 #6c5ce7,
-    -0.25px  0.25px 0 #6c5ce7,
-     0.25px  0.25px 0 #6c5ce7;
+    -0.25px -0.25px 0 #e0c489,
+     0.25px -0.25px 0 #e0c489,
+    -0.25px  0.25px 0 #e0c489,
+     0.25px  0.25px 0 #e0c489;
 }
 
 .main-content {
   max-width: 800px;
   margin: 2rem auto;
   padding: 2rem;
-  background: #1e1e1e;
+  background: #0d1219;
   border-radius: 6px;
-  box-shadow: 1px 1px 10px #6c5ce7;
+  box-shadow: 0 1px 24px rgba(0,0,0,0.5);
 }
 
 a {
-  color: #c0392b;
+  color: #6fd0bd;
 }
 
 a:hover {
-  color: #6c5ce7;
+  color: #e0c489;
   text-decoration: underline;
 }
 
@@ -58,15 +58,15 @@ a:hover {
   font-size: 0.9em;
   font-style: italic;
   padding: 6px 12px;
-  background-color: #f8f8f8;
-  color: #333;
+  background-color: #1c242e;
+  color: #eef2f7;
   border-radius: 4px;
   text-decoration: none;
 }
 
 .back-link:hover {
-  color: #6c5ce7;
-  text-shadow: #6c5ce7 1px 0 10px;
+  color: #e0c489;
+  text-shadow: #e0c489 1px 0 10px;
 }
 
 .floating-back-link {
@@ -78,7 +78,7 @@ a:hover {
   background: rgba(255, 255, 255, 0.05);
   padding: 0.4rem 0.6rem;
   border-radius: 6px;
-  color: #aaa;
+  color: #8894a6;
   text-decoration: none;
   text-align: center;
   font-style: italic;
@@ -86,15 +86,15 @@ a:hover {
   transition: all 0.2s;
   line-height: 1.2;
     text-shadow:
-    -0.25px -0.25px 0 #6c5ce7,
-     0.25px -0.25px 0 #6c5ce7,
-    -0.25px  0.25px 0 #6c5ce7,
-     0.25px  0.25px 0 #6c5ce7;
+    -0.25px -0.25px 0 #e0c489,
+     0.25px -0.25px 0 #e0c489,
+    -0.25px  0.25px 0 #e0c489,
+     0.25px  0.25px 0 #e0c489;
 }
 
 .floating-back-link:hover {
   background: rgba(255, 255, 255, 0.1);
-  color: #fff;
+  color: #f2f5f9;
 }
 
 .figure {
@@ -112,7 +112,7 @@ a:hover {
 
 .figure figcaption {
   font-size: 0.9rem;
-  color: #bbb;
+  color: #a9b4c2;
   font-style: italic;
   margin-top: 0.5rem;
   text-align: center;

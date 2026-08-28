@@ -1,4 +1,32 @@
 :root {
+	/* Dark theme. Light palette kept below for reference. */
+	--c-surface: #0d1219;
+	--c-accent: #6fd0bd;
+	--c-border: #222c37;
+	--c-ink: #eef2f7;
+	--c-border-soft: #1c242e;
+	--c-ink-muted: #a9b4c2;
+	--c-ink-faint: #8894a6;
+	--c-ink-fainter: #7b8798;
+	--c-surface-alt: #0f151d;
+	--c-ink-deep: #f2f5f9;
+	--c-surface-raised: #0f151d;
+	--c-surface-sunk: #0a0f15;
+	--c-accent-2: #e0c489;
+	--c-surface-card: #0d1219;
+	--c-accent-2-wash: #243039;
+	--c-accent-wash: #1c242e;
+	--c-border-card: #243039;
+	--c-ink-soft: #93a0b1;
+	/* Filled controls (primary buttons, checked inputs): must invert against the page. */
+	--c-reversed-bg: #6fd0bd;
+	--c-reversed-ink: #071019;
+	/* Chrome over the background photo (header, nav, intro): always light,
+	   independent of theme, because it sits on the image not the panel. */
+	--c-on-photo: #f2f5f9;
+}
+
+/* Previous light palette:
 	--c-surface: #ffffff;
 	--c-accent: #18bfef;
 	--c-border: #e2e2e2;
@@ -17,7 +45,7 @@
 	--c-accent-wash: #dfe6f3;
 	--c-border-card: #dddddd;
 	--c-ink-soft: #666666;
-}
+*/
 
 @import url(fontawesome-all.min.css);
 @import url("https://fonts.googleapis.com/css?family=Merriweather:300,700,300italic,700italic|Source+Sans+Pro:900");
@@ -121,7 +149,7 @@ input, select, textarea {
 	}
 
 	body {
-		background-color: var(--c-ink-deep);
+		background-color: var(--c-surface-sunk);
 	}
 
 		body.is-preload *, body.is-preload *:before, body.is-preload *:after {
@@ -2246,9 +2274,9 @@ input, select, textarea {
 		input[type="button"].primary,
 		button.primary,
 		.button.primary {
-			background-color: var(--c-ink);
+			background-color: var(--c-reversed-bg);
 			box-shadow: none;
-			color: var(--c-surface) !important;
+			color: var(--c-reversed-ink) !important;
 		}
 
 			input[type="submit"].primary:hover,
@@ -2541,7 +2569,7 @@ input, select, textarea {
 
 	input[type="checkbox"]:checked + label:before,
 	input[type="radio"]:checked + label:before {
-		background-color: var(--c-ink);
+		background-color: var(--c-reversed-bg);
 		border-color: var(--c-ink);
 		color: var(--c-surface);
 	}
@@ -3255,13 +3283,13 @@ input, select, textarea {
 			left: 0;
 			width: 100%;
 			height: 100%;
-			background-color: var(--c-ink);
-			background-image: url("../../images/IMG_5717.JPG"), linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("../../images/IMG_5717.JPG");
+			background-color: var(--c-surface-sunk);
+			background-image: linear-gradient(0deg, rgba(7, 10, 15, 0.80), rgba(7, 10, 15, 0.80)), url("../../images/IMG_5717.JPG"), url("../../images/IMG_5717.JPG");
 			-webkit-filter: blur(0px);
-			background-size: auto,								auto,														100% auto;
-			background-position: 30% 0%;
-			background-repeat: repeat,								no-repeat,													no-repeat;
-			background-attachment: scroll,								scroll,														scroll;
+			background-size: cover, auto, 100% auto;
+			background-position: 0% 0%, 30% 0%, 30% 0%;
+			background-repeat: no-repeat, repeat, no-repeat;
+			background-attachment: scroll, scroll, scroll;
 			z-index: -1;
 		}
 
@@ -3281,7 +3309,7 @@ input, select, textarea {
 			-webkit-transition-delay: 0.75s;
 			-ms-transition-delay: 0.75s;
 			transition-delay: 0.75s;
-			background: var(--c-ink-deep);
+			background: var(--c-surface-sunk);
 			content: '';
 			display: block;
 			height: 100%;
@@ -3307,7 +3335,7 @@ input, select, textarea {
 /* Intro */
 
 	#intro {
-		color: var(--c-surface);
+		color: var(--c-on-photo);
 		padding: 8rem 4rem 6rem 4rem ;
 		-moz-align-items: center;
 		-webkit-align-items: center;
@@ -3337,11 +3365,11 @@ input, select, textarea {
 	}
 
 		#intro input, #intro select, #intro textarea {
-			color: var(--c-surface);
+			color: var(--c-on-photo);
 		}
 
 		#intro a {
-			color: var(--c-surface);
+			color: var(--c-on-photo);
 			border-bottom-color: rgba(255, 255, 255, 0.5);
 		}
 
@@ -3351,24 +3379,24 @@ input, select, textarea {
 			}
 
 		#intro strong, #intro b {
-			color: var(--c-surface);
+			color: var(--c-on-photo);
 		}
 
 		#intro h1, #intro h2, #intro h3, #intro h4, #intro h5, #intro h6 {
-			color: var(--c-surface);
+			color: var(--c-on-photo);
 		}
 
 		#intro blockquote {
-			border-left-color: var(--c-surface);
+			border-left-color: var(--c-on-photo);
 		}
 
 		#intro code {
 			background: rgba(255, 255, 255, 0.075);
-			border-color: var(--c-surface);
+			border-color: var(--c-on-photo);
 		}
 
 		#intro hr {
-			border-bottom-color: var(--c-surface);
+			border-bottom-color: var(--c-border);
 		}
 
 		#intro input[type="submit"],
@@ -3378,7 +3406,7 @@ input, select, textarea {
 		#intro .button {
 			background-color: transparent;
 			box-shadow: inset 0 0 0 2px var(--c-surface);
-			color: var(--c-surface) !important;
+			color: var(--c-ink) !important;
 		}
 
 			#intro input[type="submit"]:hover,
@@ -3395,7 +3423,7 @@ input, select, textarea {
 			#intro input[type="button"].primary,
 			#intro button.primary,
 			#intro .button.primary {
-				background-color: var(--c-surface);
+				background-color: var(--c-on-photo);
 				box-shadow: none;
 				color: var(--c-ink-deep) !important;
 			}
@@ -3516,7 +3544,7 @@ input, select, textarea {
 /* Header */
 
 	#header {
-		color: var(--c-surface);
+		color: var(--c-on-photo);
 		-moz-align-items: center;
 		-webkit-align-items: center;
 		-ms-align-items: center;
@@ -3546,11 +3574,11 @@ input, select, textarea {
 	}
 
 		#header input, #header select, #header textarea {
-			color: var(--c-surface);
+			color: var(--c-on-photo);
 		}
 
 		#header a {
-			color: var(--c-surface);
+			color: var(--c-on-photo);
 			border-bottom-color: rgba(255, 255, 255, 0.5);
 		}
 
@@ -3560,24 +3588,24 @@ input, select, textarea {
 			}
 
 		#header strong, #header b {
-			color: var(--c-surface);
+			color: var(--c-on-photo);
 		}
 
 		#header h1, #header h2, #header h3, #header h4, #header h5, #header h6 {
-			color: var(--c-surface);
+			color: var(--c-on-photo);
 		}
 
 		#header blockquote {
-			border-left-color: var(--c-surface);
+			border-left-color: var(--c-on-photo);
 		}
 
 		#header code {
 			background: rgba(255, 255, 255, 0.075);
-			border-color: var(--c-surface);
+			border-color: var(--c-on-photo);
 		}
 
 		#header hr {
-			border-bottom-color: var(--c-surface);
+			border-bottom-color: var(--c-on-photo);
 		}
 
 		#header .logo {
@@ -3587,7 +3615,7 @@ input, select, textarea {
 			transition: border-color 0.2s ease-in-out, color 0.2s ease-in-out, opacity 0.5s ease, transform 0.5s ease, visibility 0.5s;
 			pointer-events: auto;
 			border-style: solid;
-			border-color: var(--c-surface);
+			border-color: var(--c-on-photo);
 			border-width: 5px !important;
 			font-family: "Source Sans Pro", Helvetica, sans-serif;
 			font-size: 2.25rem;
@@ -3629,7 +3657,7 @@ input, select, textarea {
 /* Nav */
 
 	#nav {
-		color: var(--c-surface);
+		color: var(--c-on-photo);
 		display: -moz-flex;
 		display: -webkit-flex;
 		display: -ms-flex;
@@ -3651,7 +3679,7 @@ input, select, textarea {
 	}
 
 		#nav ul.divided li {
-			border-top-color: var(--c-surface);
+			border-top-color: var(--c-on-photo);
 		}
 
 		#nav ul.icons li a.icon:hover:before {
@@ -3667,11 +3695,11 @@ input, select, textarea {
 		}
 
 		#nav input, #nav select, #nav textarea {
-			color: var(--c-surface);
+			color: var(--c-on-photo);
 		}
 
 		#nav a {
-			color: var(--c-surface);
+			color: var(--c-on-photo);
 			border-bottom-color: rgba(255, 255, 255, 0.5);
 		}
 
@@ -3681,24 +3709,24 @@ input, select, textarea {
 			}
 
 		#nav strong, #nav b {
-			color: var(--c-surface);
+			color: var(--c-on-photo);
 		}
 
 		#nav h1, #nav h2, #nav h3, #nav h4, #nav h5, #nav h6 {
-			color: var(--c-surface);
+			color: var(--c-on-photo);
 		}
 
 		#nav blockquote {
-			border-left-color: var(--c-surface);
+			border-left-color: var(--c-on-photo);
 		}
 
 		#nav code {
 			background: rgba(255, 255, 255, 0.075);
-			border-color: var(--c-surface);
+			border-color: var(--c-on-photo);
 		}
 
 		#nav hr {
-			border-bottom-color: var(--c-surface);
+			border-bottom-color: var(--c-on-photo);
 		}
 
 		#nav ul.links {
@@ -3745,11 +3773,11 @@ input, select, textarea {
 					}
 
 				#nav ul.links li.active {
-					background-color: var(--c-surface);
+					background-color: var(--c-on-photo);
 				}
 
 					#nav ul.links li.active a {
-						color: var(--c-ink-deep);
+						color: var(--c-reversed-ink);
 					}
 
 						#nav ul.links li.active a:hover {
@@ -3779,7 +3807,7 @@ input, select, textarea {
 /* Main */
 
 	#main {
-		background-color: rgb(255, 255, 255, 0.9);
+		background-color: rgba(13, 18, 25, 0.90);
 		position: relative;
 		margin: 0 auto;
 		width: calc(100% - 4rem);
@@ -4520,7 +4548,7 @@ input, select, textarea {
 		top: 0.75rem;
 		right: 0.75rem;
 		border: 0;
-		color: var(--c-surface);
+		color: var(--c-on-photo);
 		font-family: "Source Sans Pro", Helvetica, sans-serif;
 		font-size: 0.9rem;
 		font-weight: 900;
@@ -4555,7 +4583,7 @@ input, select, textarea {
 		}
 
 			#navPanelToggle.alt:hover {
-				background-color: var(--c-surface);
+				background-color: var(--c-on-photo);
 			}
 
 		@media screen and (max-width: 980px) {
