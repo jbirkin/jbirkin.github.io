@@ -5,6 +5,7 @@
 	/* Dark theme. Light palette kept below for reference. */
 	--c-surface: #0d1219;
 	--c-accent: #6fd0bd;
+	--c-accent-bright: #8fe0cd;
 	--c-border: #222c37;
 	--c-ink: #eef2f7;
 	--c-border-soft: #1c242e;
@@ -4843,45 +4844,144 @@ input, select, textarea {
 }
 /* ---------------------------------------------------------------
    Portfolio modules
-   Project entries on portfolio.html. Structure follows the design
-   mockup: a metadata strip (index, period, status), a keyed rule,
-   then Problem / Approach / Outcome, tech chips and links.
-   Section colour distinguishes AI engineering from research.
+   Follows the design mockup: a bordered title block with a readouts
+   panel, then project modules on a hairline grid. Section rules fade
+   from the accent colour rather than running solid.
    --------------------------------------------------------------- */
 
+/* Title block: title and intro left, readouts right, one bordered row. */
+.pf-head {
+	display: grid;
+	grid-template-columns: minmax(0, 1.34fr) minmax(0, 1fr);
+	border: 1px solid var(--c-border-soft);
+	border-top: 0;
+	margin-bottom: 3.25rem;
+}
+
+	.pf-head-title {
+		padding: 2.4rem 2.5rem 2.1rem 2.25rem;
+		border-right: 1px solid var(--c-border-soft);
+	}
+
+	.pf-eyebrow {
+		font-family: var(--f-display);
+		font-size: 0.625rem;
+		letter-spacing: 0.24em;
+		text-transform: uppercase;
+		color: var(--c-ink-fainter);
+		margin-bottom: 0.9rem;
+	}
+
+	.pf-head-title h1 {
+		font-family: var(--f-body);
+		font-weight: 400;
+		font-size: 2.875rem;
+		line-height: 1.02;
+		letter-spacing: 0;
+		text-transform: none;
+		color: var(--c-ink-deep);
+		margin: 0 0 1.1rem 0;
+	}
+
+	.pf-head-title p {
+		font-size: 1.03rem;
+		line-height: 1.62;
+		color: var(--c-ink-muted);
+		max-width: 34em;
+		margin: 0;
+	}
+
+	.pf-readouts { display: flex; flex-direction: column; }
+
+		.pf-readouts-label {
+			padding: 1rem 1.75rem 0.85rem 1.75rem;
+			border-bottom: 1px solid var(--c-border-soft);
+			font-family: var(--f-display);
+			font-size: 0.59rem;
+			letter-spacing: 0.22em;
+			text-transform: uppercase;
+			color: var(--c-ink-fainter);
+		}
+
+		.pf-readouts-grid {
+			display: grid;
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+			gap: 1px;
+			background: var(--c-border-soft);
+			flex: 1;
+		}
+
+			.pf-readouts-grid > div {
+				background: var(--c-surface);
+				padding: 1.25rem 1.6rem;
+			}
+
+			.pf-readout-n {
+				font-family: var(--f-display);
+				font-size: 1.7rem;
+				line-height: 1;
+				letter-spacing: -0.01em;
+				color: var(--c-accent-bright);
+			}
+
+			.pf-readout-l {
+				font-family: var(--f-display);
+				font-size: 0.59rem;
+				letter-spacing: 0.16em;
+				text-transform: uppercase;
+				color: var(--c-ink-fainter);
+				margin-top: 0.4rem;
+			}
+
+/* Section heads: letter, name in EB Garamond, note, then a rule that
+   runs out to the right. */
 .pf-section-head {
 	display: flex;
 	align-items: baseline;
-	gap: 1rem;
-	flex-wrap: wrap;
-	padding-bottom: 0.7rem;
-	border-bottom: 2px solid var(--c-accent);
-	margin-bottom: 0.6rem;
+	gap: 1.15rem;
+	padding-bottom: 0.75rem;
 }
 
-	.pf-section-head h2 {
-		margin: 0;
-		font-size: 0.95rem;
-		letter-spacing: 0.18em;
+	.pf-section-letter {
+		font-family: var(--f-display);
+		font-size: 0.7rem;
+		letter-spacing: 0.22em;
 		color: var(--c-accent);
 	}
 
-	.pf-section-head .pf-section-note {
-		font-size: 0.8rem;
+	.pf-section-head h2 {
+		margin: 0;
+		font-family: var(--f-body);
+		font-weight: 400;
+		font-size: 1.7rem;
+		letter-spacing: 0;
+		text-transform: none;
+		color: var(--c-ink);
+	}
+
+	.pf-section-note {
+		font-size: 0.95rem;
 		color: var(--c-ink-faint);
 		font-style: italic;
 	}
 
-	.pf-research .pf-section-head { border-bottom-color: var(--c-accent-2); }
-	.pf-research .pf-section-head h2 { color: var(--c-accent-2); }
+	.pf-section-fill { flex: 1; height: 1px; background: var(--c-border-soft); }
 
-.pf-intro {
-	color: var(--c-ink-muted);
-	margin-bottom: 2.5rem;
+	.pf-research .pf-section-letter { color: var(--c-accent-2); }
+
+/* The keyed rule under each section head fades out to the right. */
+.pf-rule {
+	height: 1px;
+	background: linear-gradient(90deg, var(--c-accent) 0%, rgba(111, 208, 189, 0.06) 40%, rgba(111, 208, 189, 0) 100%);
+	margin-bottom: 1.75rem;
 }
 
-/* Grid of modules. Hairline gaps read as an engineered surface
-   rather than floating cards. */
+	.pf-research .pf-rule {
+		background: linear-gradient(90deg, var(--c-accent-2) 0%, rgba(201, 168, 106, 0.06) 40%, rgba(201, 168, 106, 0) 100%);
+	}
+
+.pf-intro { color: var(--c-ink-muted); margin-bottom: 2.5rem; }
+
 .pf-grid {
 	display: grid;
 	grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -4923,7 +5023,7 @@ input, select, textarea {
 		border: 1px solid var(--c-border-card);
 		border-radius: 2px;
 		padding: 0.15rem 0.45rem;
-		color: var(--c-accent);
+		color: var(--c-accent-bright);
 	}
 
 		.pf-research .pf-status { color: var(--c-accent-2); }
@@ -4944,8 +5044,8 @@ input, select, textarea {
 	.pf-module h3 {
 		margin: 0;
 		font-family: var(--f-body);
-		font-size: 1.35rem;
-		font-weight: 600;
+		font-weight: 400;
+		font-size: 1.4rem;
 		letter-spacing: 0;
 		text-transform: none;
 		line-height: 1.15;
@@ -4980,12 +5080,7 @@ input, select, textarea {
 
 	.pf-foot { margin-top: auto; padding-top: 0.4rem; }
 
-	.pf-chips {
-		display: flex;
-		flex-wrap: wrap;
-		gap: 0.3rem;
-		margin-bottom: 0.9rem;
-	}
+	.pf-chips { display: flex; flex-wrap: wrap; gap: 0.3rem; margin-bottom: 0.9rem; }
 
 		.pf-chips span {
 			font-family: var(--f-display);
@@ -5008,13 +5103,11 @@ input, select, textarea {
 		.pf-links a { border-bottom: 1px solid rgba(111, 208, 189, 0.35); }
 		.pf-links .pf-closed { color: var(--c-ink-fainter); font-style: italic; }
 
-/* Figures are matplotlib plots on white; inverting sits them on the
-   dark ground without regenerating the source images. Screenshots
-   must not be inverted. */
+/* Figures are matplotlib plots flattened onto white; inverting sits
+   them on the dark ground without regenerating the sources. */
 .pf-plate {
 	background: var(--c-surface-sunk);
 	border-bottom: 1px solid var(--c-border-soft);
-	padding: 0;
 	overflow: hidden;
 }
 
@@ -5025,38 +5118,10 @@ input, select, textarea {
 		filter: invert(1) hue-rotate(180deg) saturate(0.85);
 	}
 
-.pf-stats {
-	display: grid;
-	grid-template-columns: repeat(3, minmax(0, 1fr));
-	gap: 1px;
-	background: var(--c-border-soft);
-	border: 1px solid var(--c-border-soft);
-	margin-bottom: 1px;
-}
-
-	.pf-stats > div {
-		background: var(--c-surface-alt);
-		padding: 1.1rem 1.25rem;
-	}
-
-	.pf-stat-n {
-		font-family: var(--f-display);
-		font-weight: 600;
-		font-size: 1.8rem;
-		line-height: 1;
-		color: var(--c-ink-deep);
-	}
-
-	.pf-stat-l {
-		font-size: 0.8rem;
-		line-height: 1.45;
-		color: var(--c-ink-faint);
-		margin-top: 0.35rem;
-	}
-
 @media screen and (max-width: 980px) {
+	.pf-head { grid-template-columns: minmax(0, 1fr); }
+	.pf-head-title { border-right: 0; border-bottom: 1px solid var(--c-border-soft); }
 	.pf-grid, .pf-grid.pf-grid-3 { grid-template-columns: minmax(0, 1fr); }
-	.pf-stats { grid-template-columns: minmax(0, 1fr); }
 }
 
 /* ---------------------------------------------------------------
@@ -5131,6 +5196,14 @@ input, select, textarea {
 			border-bottom: 1px solid var(--c-accent);
 			padding-bottom: 3px;
 		}
+
+	.sitebar-rule {
+		height: 1px;
+		background: linear-gradient(90deg, var(--c-accent) 0%, #2a3642 22%, #1a212a 100%);
+		max-width: 84rem;
+		margin: 0 auto;
+		width: calc(100% - 4rem);
+	}
 
 	.sitebar-sep {
 		width: 1px;
