@@ -5058,3 +5058,129 @@ input, select, textarea {
 	.pf-grid, .pf-grid.pf-grid-3 { grid-template-columns: minmax(0, 1fr); }
 	.pf-stats { grid-template-columns: minmax(0, 1fr); }
 }
+
+/* ---------------------------------------------------------------
+   Site header
+   One compact bar: name left with an eyebrow above it, nav and
+   social icons right. Replaces the template's boxed logo and
+   full-width nav strip. Follows the design mockup.
+   --------------------------------------------------------------- */
+
+.sitebar {
+	position: relative;
+	z-index: 3;
+	display: flex;
+	align-items: flex-end;
+	justify-content: space-between;
+	gap: 2rem;
+	flex-wrap: wrap;
+	max-width: 84rem;
+	margin: 0 auto;
+	padding: 2.1rem 3.5rem 1.25rem 3.5rem;
+	width: calc(100% - 4rem);
+}
+
+	.sitebar-eyebrow {
+		font-family: var(--f-display);
+		font-size: 0.625rem;
+		font-weight: 500;
+		letter-spacing: 0.22em;
+		text-transform: uppercase;
+		color: var(--c-accent);
+		margin-bottom: 0.55rem;
+	}
+
+	.sitebar-name {
+		font-family: var(--f-body);
+		font-size: 2.375rem;
+		line-height: 1;
+		color: var(--c-ink-deep);
+		letter-spacing: 0.005em;
+		border-bottom: 0;
+	}
+
+		a.sitebar-name:hover { color: var(--c-accent); }
+
+	.sitebar-right {
+		display: flex;
+		align-items: center;
+		gap: 1.6rem;
+		padding-bottom: 0.3rem;
+		flex-wrap: wrap;
+	}
+
+	.sitebar-nav {
+		display: flex;
+		align-items: center;
+		gap: 1.4rem;
+		font-family: var(--f-display);
+		font-size: 0.75rem;
+		letter-spacing: 0.1em;
+		text-transform: uppercase;
+	}
+
+		.sitebar-nav a {
+			color: var(--c-ink-faint);
+			border-bottom: 0;
+		}
+
+			.sitebar-nav a:hover { color: var(--c-ink-deep); }
+
+		.sitebar-nav .is-here {
+			color: var(--c-ink-deep);
+			border-bottom: 1px solid var(--c-accent);
+			padding-bottom: 3px;
+		}
+
+	.sitebar-sep {
+		width: 1px;
+		height: 20px;
+		background: var(--c-border);
+	}
+
+	.sitebar-icons {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+	}
+
+		.sitebar-icons a {
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			width: 30px;
+			height: 30px;
+			border: 1px solid var(--c-border);
+			border-radius: 3px;
+			background: var(--c-surface-alt);
+			color: var(--c-ink-faint);
+			border-bottom: 1px solid var(--c-border);
+		}
+
+			.sitebar-icons a:hover {
+				color: var(--c-accent);
+				border-color: var(--c-accent);
+			}
+
+@media screen and (max-width: 736px) {
+	.sitebar {
+		padding: 1.5rem 1.5rem 1rem 1.5rem;
+		align-items: flex-start;
+		flex-direction: column;
+		gap: 1.25rem;
+	}
+	.sitebar-name { font-size: 1.875rem; }
+	.sitebar-right { gap: 1rem; }
+	.sitebar-nav { gap: 1rem; font-size: 0.7rem; }
+}
+
+/* Page titles follow the mockup: EB Garamond, mixed case, no tracking,
+   rather than the template's uppercase sans. */
+#main .post > header.major h1 {
+	font-family: var(--f-body);
+	font-weight: 600;
+	font-size: 2.75rem;
+	letter-spacing: 0;
+	text-transform: none;
+	color: var(--c-ink-deep);
+}
