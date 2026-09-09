@@ -1,0 +1,250 @@
+---
+layout: null
+---
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Background options</title>
+<link rel="stylesheet" href="assets/css/main.css"/>
+<style>
+    /* Each variant paints #bgtest; the switcher toggles a class on <html>. */
+    #bgtest { position: fixed; inset: 0; z-index: -1; background-color: var(--c-surface-sunk); }
+
+    /* A — flat (current) */
+    .v-flat #bgtest { background: var(--c-surface-sunk); }
+
+    /* B — tree photo, heavily darkened */
+    .v-trees #bgtest {
+        background:
+            linear-gradient(0deg, rgba(7,10,15,0.86), rgba(7,10,15,0.86)),
+            url("images/bg_trees.jpg") 30% 0% / cover no-repeat,
+            var(--c-surface-sunk);
+    }
+
+    /* C — SPIRE submm sky field */
+    .v-spire #bgtest {
+        background:
+            linear-gradient(0deg, rgba(7,10,15,0.88), rgba(7,10,15,0.88)),
+            url("images/bg_spire.jpg") center / cover no-repeat,
+            var(--c-surface-sunk);
+    }
+
+    /* D — pure CSS glow wash, no image */
+    .v-glow #bgtest {
+        background:
+            radial-gradient(900px 620px at 12% -6%,  rgba(111,208,189,0.16), rgba(10,15,21,0) 68%),
+            radial-gradient(760px 560px at 88% 12%,  rgba(201,168,106,0.11), rgba(10,15,21,0) 66%),
+            radial-gradient(1000px 700px at 50% 108%, rgba(90,150,210,0.10), rgba(10,15,21,0) 70%),
+            var(--c-surface-sunk);
+    }
+
+    /* E — fine grid, engineered surface */
+    .v-grid #bgtest {
+        background:
+            radial-gradient(1100px 700px at 15% -8%, rgba(111,208,189,0.10), rgba(10,15,21,0) 66%),
+            repeating-linear-gradient(0deg,  rgba(255,255,255,0.020) 0 1px, rgba(0,0,0,0) 1px 44px),
+            repeating-linear-gradient(90deg, rgba(255,255,255,0.020) 0 1px, rgba(0,0,0,0) 1px 44px),
+            var(--c-surface-sunk);
+    }
+
+    /* F — starfield, drawn once as an SVG data URI */
+    .v-stars #bgtest {
+        background:
+            radial-gradient(900px 600px at 80% 0%, rgba(111,208,189,0.10), rgba(10,15,21,0) 70%),
+            url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='420' height='420'><g fill='%23dfe8f2'><circle cx='30' cy='48' r='0.9' opacity='0.55'/><circle cx='118' cy='22' r='0.6' opacity='0.38'/><circle cx='205' cy='96' r='1.1' opacity='0.6'/><circle cx='300' cy='40' r='0.7' opacity='0.42'/><circle cx='372' cy='130' r='0.9' opacity='0.5'/><circle cx='64' cy='168' r='0.7' opacity='0.4'/><circle cx='158' cy='210' r='1.0' opacity='0.55'/><circle cx='250' cy='176' r='0.6' opacity='0.35'/><circle cx='344' cy='250' r='0.8' opacity='0.45'/><circle cx='22' cy='300' r='1.0' opacity='0.5'/><circle cx='120' cy='344' r='0.7' opacity='0.4'/><circle cx='214' cy='300' r='0.9' opacity='0.5'/><circle cx='288' cy='390' r='0.6' opacity='0.34'/><circle cx='390' cy='340' r='1.0' opacity='0.52'/><circle cx='96' cy='120' r='0.5' opacity='0.3'/><circle cx='268' cy='140' r='0.5' opacity='0.3'/></g></svg>") repeat,
+            var(--c-surface-sunk);
+    }
+
+    .switcher {
+        position: fixed; top: 0; left: 0; right: 0; z-index: 50;
+        display: flex; gap: 0.4rem; flex-wrap: wrap;
+        padding: 0.7rem 1rem; background: rgba(6,9,13,0.94);
+        border-bottom: 1px solid var(--c-border);
+        font-family: var(--f-display); font-size: 0.75rem;
+    }
+    .switcher button {
+        font-family: var(--f-display); font-size: 0.72rem; letter-spacing: 0.08em;
+        text-transform: uppercase; padding: 0.35rem 0.7rem; cursor: pointer;
+        background: rgba(111,208,189,0.06); color: var(--c-accent-bright);
+        border: 1px solid var(--c-status-edge); border-radius: 2px;
+    }
+    .switcher button[aria-pressed="true"] { background: var(--c-accent); color: #071019; border-color: var(--c-accent); }
+    .switcher .note { color: var(--c-ink-faint); align-self: center; margin-left: 0.6rem; }
+    body { padding-top: 3.2rem; }
+</style>
+</head>
+<body>
+<div id="bgtest"></div>
+
+<div class="switcher">
+    <button data-v="flat"  aria-pressed="true">A · Flat (current)</button>
+    <button data-v="trees" aria-pressed="false">B · Trees</button>
+    <button data-v="spire" aria-pressed="false">C · SPIRE sky</button>
+    <button data-v="glow"  aria-pressed="false">D · Glow wash</button>
+    <button data-v="grid"  aria-pressed="false">E · Grid</button>
+    <button data-v="stars" aria-pressed="false">F · Starfield</button>
+    <span class="note" id="wt">no image</span>
+</div>
+
+<div id="wrapper">
+    <div class="sitebar">
+        <div>
+            <div class="sitebar-eyebrow">AI Engineer &nbsp;&middot;&nbsp; PhD Astrophysics</div>
+            <a href="index.html" class="sitebar-name">Jack Birkin</a>
+        </div>
+        <div class="sitebar-right">
+            <nav class="sitebar-nav">
+                <a href="index.html">Home</a>
+                <span class="is-here">Portfolio</span>
+                <a href="astro.html">Astronomy</a>
+                <a href="resume_birkin.pdf">R&eacute;sum&eacute;</a>
+            </nav>
+        </div>
+    </div>
+    <div class="sitebar-rule"></div>
+
+    <div id="main">
+        <section class="post">
+            <div class="pf-head">
+                <div class="pf-head-title">
+                    <div class="pf-eyebrow">Index 01 &mdash; 08</div>
+                    <h1>Portfolio</h1>
+                    <p>The panel is 90% opaque, so the background reads in the margins and faintly through the content. Switch between options above.</p>
+                </div>
+                <div class="pf-readouts">
+                    <div class="pf-readouts-label">Readouts</div>
+                    <div class="pf-readouts-grid">
+                        <div><div class="pf-readout-n">355</div><div class="pf-readout-l">Hermetic tests</div></div>
+                        <div><div class="pf-readout-n">3,500</div><div class="pf-readout-l">Pages indexed</div></div>
+                        <div><div class="pf-readout-n">5</div><div class="pf-readout-l">First-author papers</div></div>
+                        <div><div class="pf-readout-n">1</div><div class="pf-readout-l">AI engineer on product</div></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pf-ai">
+                <div class="pf-section-head">
+                    <span class="pf-section-letter">A</span>
+                    <h2>AI engineering</h2>
+                    <span class="pf-section-note">Fam&#275;lia &mdash; current work</span>
+                    <span class="pf-section-fill"></span>
+                    <span class="pf-section-count">3 modules</span>
+                </div>
+                <div class="pf-rule"></div>
+                <div class="pf-grid pf-grid-3">
+                    <div class="pf-module">
+                        <div class="pf-module-meta"><span>01 &middot; 2025 &mdash;</span><span class="pf-status">Proprietary</span></div>
+                        <div class="pf-module-rule"></div>
+                        <div class="pf-module-body">
+                            <div><h3>Amelia</h3><div class="pf-tagline">Per-member recipe adaptation over a knowledge graph.</div></div>
+                            <dl class="pf-slots">
+                                <div><dt>Problem</dt><dd>[One or two sentences: what was hard, and for whom.]</dd></div>
+                                <div><dt>Outcome</dt><dd>[One or two sentences: what it does now and who uses it.]</dd></div>
+                            </dl>
+                            <div class="pf-foot">
+                                <div class="pf-chips"><span>LangGraph</span><span>FastAPI</span><span>Azure</span></div>
+                                <div class="pf-links"><a href="#">Write-up</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pf-module">
+                        <div class="pf-module-meta"><span>02 &middot; 2025 &mdash;</span><span class="pf-status">Proprietary</span></div>
+                        <div class="pf-module-rule"></div>
+                        <div class="pf-module-body">
+                            <div><h3>Clinical nutrition retrieval</h3><div class="pf-tagline">Grounded answers over a 3,500-page reference manual.</div></div>
+                            <dl class="pf-slots">
+                                <div><dt>Problem</dt><dd>[One or two sentences: what was hard, and for whom.]</dd></div>
+                                <div><dt>Outcome</dt><dd>[One or two sentences: what it does now and who uses it.]</dd></div>
+                            </dl>
+                            <div class="pf-foot">
+                                <div class="pf-chips"><span>pgvector</span><span>Postgres</span></div>
+                                <div class="pf-links"><a href="#">Write-up</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pf-module">
+                        <div class="pf-module-meta"><span>03 &middot; 2025 &mdash;</span><span class="pf-status">Proprietary</span></div>
+                        <div class="pf-module-rule"></div>
+                        <div class="pf-module-body">
+                            <div><h3>Testing and observability</h3><div class="pf-tagline">A pipeline put under test and made observable.</div></div>
+                            <dl class="pf-slots">
+                                <div><dt>Problem</dt><dd>[One or two sentences: what was hard, and for whom.]</dd></div>
+                                <div><dt>Outcome</dt><dd>[One or two sentences: what it does now and who uses it.]</dd></div>
+                            </dl>
+                            <div class="pf-foot">
+                                <div class="pf-chips"><span>pytest</span><span>LangSmith</span></div>
+                                <div class="pf-links"><a href="#">Write-up</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pf-research">
+                <div class="pf-section-head">
+                    <span class="pf-section-letter">B</span>
+                    <h2>Research and scientific software</h2>
+                    <span class="pf-section-note">Doctorate and postdoctoral work</span>
+                    <span class="pf-section-fill"></span>
+                    <span class="pf-section-count">5 modules</span>
+                </div>
+                <div class="pf-rule"></div>
+                <div class="pf-grid">
+                    <div class="pf-module">
+                        <div class="pf-module-meta"><span>04 &middot; 2022&ndash;2024</span><span class="pf-status">Open source</span></div>
+                        <div class="pf-module-rule"></div>
+                        <div class="pf-module-body">
+                            <div><h3>cubespecfit</h3><div class="pf-tagline">Spaxel-by-spaxel emission-line fitting for 3-D data cubes.</div></div>
+                            <dl class="pf-slots">
+                                <div><dt>Problem</dt><dd>[One or two sentences: what was hard, and for whom.]</dd></div>
+                            </dl>
+                            <div class="pf-foot">
+                                <div class="pf-chips"><span>Python</span><span>astropy</span></div>
+                                <div class="pf-links"><a href="#">Repository</a><a href="#">Write-up</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pf-module">
+                        <div class="pf-module-meta"><span>05 &middot; 2023&ndash;2025</span><span class="pf-status">Open source</span></div>
+                        <div class="pf-module-rule"></div>
+                        <div class="pf-module-body">
+                            <div><h3>alma-stacking-pipeline</h3><div class="pf-tagline">Aggregating weak spectra into a measurable signal.</div></div>
+                            <dl class="pf-slots">
+                                <div><dt>Problem</dt><dd>[One or two sentences: what was hard, and for whom.]</dd></div>
+                            </dl>
+                            <div class="pf-foot">
+                                <div class="pf-chips"><span>MCMC</span><span>bootstrap</span></div>
+                                <div class="pf-links"><a href="#">Repository</a><a href="#">Write-up</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+
+<script>
+(function () {
+    var weights = { flat:'no image', trees:'158 KB image', spire:'125 KB image',
+                    glow:'no image', grid:'no image', stars:'no image (inline SVG, ~1 KB)' };
+    var btns = document.querySelectorAll('.switcher button');
+    var note = document.getElementById('wt');
+    function set(v) {
+        document.documentElement.className = 'v-' + v;
+        btns.forEach(function (b) { b.setAttribute('aria-pressed', b.dataset.v === v); });
+        note.textContent = weights[v];
+    }
+    btns.forEach(function (b) { b.addEventListener('click', function () { set(b.dataset.v); }); });
+    var h = (location.hash || '').replace('#','');
+    set(weights[h] ? h : 'flat');
+    window.addEventListener('hashchange', function () {
+        var v = (location.hash || '').replace('#','');
+        if (weights[v]) set(v);
+    });
+})();
+</script>
+</body>
+</html>
