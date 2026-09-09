@@ -6,10 +6,6 @@ categories: data-science
 author: Jack Birkin
 ---
 
-<a href="{{ '/' | relative_url }}portfolio.html" class="back-link">← Back to main site</a>
-
-# Interactive Image Viewer for SPT3G and MeerKAT Cutouts
-
 ## Overview
 
 This blog details how to build an interactive image viewer using **Dash**, designed to browse through **SPT3G and

@@ -25,7 +25,7 @@ To extract meaningful kinematic measurements from noisy, high-redshift observati
 
 - **Adaptive Binning and Modeling**: To maximize signal-to-noise in faint outer regions, I implemented an adaptive binning routine that preserved spatial resolution in high-S/N regions while aggregating lower-S/N areas. I then applied 3D kinematic modeling to extract rotation curves and dispersion profiles for each galaxy.
 
-<figure class="figure">
+<figure class="figure figure-asis">
   <img src="/images/kaoss_poster.png" alt="KAOSS poster">
   <figcaption>A visual summary of the galaxy sample, showing rotation fields as a function of stellar mass and star formation rate.
   </figcaption>

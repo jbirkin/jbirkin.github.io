@@ -1,43 +1,79 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>{{ page.title }}</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&amp;family=IBM+Plex+Sans:wght@500;600&amp;display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{ '/assets/css/midnight.css' | relative_url }}">
-    {% raw %}
-    <script>
-window.MathJax = {
-  tex: {
-    inlineMath: [['$', '$'], ['\\(', '\\)']],
-    displayMath: [['$$', '$$'], ['\\[', '\\]']]
-  },
-  svg: {
-    fontCache: 'global'
-  }
-};
-
-    </script>
-    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    {% endraw %}
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <title>{{ page.title }} — Jack Birkin</title>
+    <meta name="description" content="{{ page.title }} — a write-up by Jack Birkin." />
+    <link rel="icon" href="{{ '/favicon.svg' | relative_url }}" type="image/svg+xml" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="{{ page.title }}" />
+    <meta property="og:url" content="{{ page.url | absolute_url }}" />
+    <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}"/>
+    <noscript>
+    <link rel="stylesheet" href="{{ '/assets/css/noscript.css' | relative_url }}"/>
+    </noscript>
 </head>
-<body>
-<section class="page-header">
-    <h1>{{ page.title }}</h1>
-    <h2>{{ page.author }}, {{ page.date | date: "%B %d, %Y" }}</h2>
-</section>
+<body class="is-preload">
 
-<a href="{{ '/' | relative_url }}portfolio.html" class="floating-back-link">
-  Back<br>to<br>Portfolio
-</a>
+<!-- Wrapper -->
+<div id="wrapper">
 
+    <!-- Header -->
+    <div class="sitebar">
+        <div>
+            <div class="sitebar-eyebrow">AI Engineer &nbsp;&middot;&nbsp; PhD Astrophysics</div>
+            <a href="{{ '/index.html' | relative_url }}" class="sitebar-name">Jack Birkin</a>
+        </div>
+        <div class="sitebar-right">
+            <nav class="sitebar-nav">
+                <a href="{{ '/index.html' | relative_url }}">Home</a>
+                <a href="{{ '/portfolio.html' | relative_url }}">Portfolio</a>
+                <a href="{{ '/astro.html' | relative_url }}">Astronomy</a>
+                <a href="{{ '/resume_birkin.pdf' | relative_url }}">R&eacute;sum&eacute;</a>
+            </nav>
+            <div class="sitebar-sep"></div>
+            <div class="sitebar-icons">
+                <a href="mailto:jbirkin10@gmail.com" aria-label="Email"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="5" width="19" height="14" rx="2"/><path d="M3 6.5l9 6 9-6"/></svg></a>
+                <a href="https://github.com/jbirkin" aria-label="GitHub"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-4.3 1.3-4.3-2.2-6-2.7m12 5.4v-3.4c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.3 4.3 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12 12 0 0 0-6.2 0C6.5 3.6 5.4 3.9 5.4 3.9a4.3 4.3 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 10.3c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2v3.4"/></svg></a>
+                <a href="https://www.linkedin.com/in/jack-birkin" aria-label="LinkedIn"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 10.5V17M7 7.5v.01M11 17v-3.6a2.4 2.4 0 0 1 4.8 0V17"/></svg></a>
+            </div>
+        </div>
+    </div>
+    <div class="sitebar-rule"></div>
 
-<section class="main-content">
-    <article>
-<!--        <p><em>{{ page.date | date: "%B %d, %Y" }}</em></p>-->
-        {{ content }}
-    </article>
-</section>
+    <!-- Main -->
+    <div id="main">
+
+        <section class="post article">
+
+            <div class="pf-head article-head">
+                <div class="pf-head-title">
+                    <div class="pf-eyebrow">Write-up &nbsp;&middot;&nbsp; {{ page.date | date: "%B %Y" }}</div>
+                    <h1>{{ page.title }}</h1>
+                </div>
+            </div>
+
+            <article class="article-body">
+                {{ content }}
+            </article>
+
+            <div class="article-foot">
+                <a href="{{ '/portfolio.html' | relative_url }}" class="article-back">Back to the portfolio</a>
+            </div>
+
+        </section>
+
+    </div>
+
+</div>
+
+<!-- Scripts -->
+<script src="{{ '/assets/js/jquery.min.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/browser.min.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/breakpoints.min.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/util.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+
 </body>
 </html>

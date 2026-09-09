@@ -5347,3 +5347,175 @@ input, select, textarea {
 	.pf-head-title { padding: 1.75rem 1.5rem; }
 	.pf-head-title h1 { font-size: 2.25rem; }
 }
+
+/* ---------------------------------------------------------------
+   Article pages
+   Long-form write-ups linked from the portfolio modules. They reuse
+   the site's tokens, header and #main panel, so the reading page is
+   the same object as the rest of the site rather than a subsite.
+   --------------------------------------------------------------- */
+
+.article-head { margin-bottom: 2.5rem; }
+
+	.article-head .pf-head-title {
+		border-right: 0;
+		padding-right: 2.5rem;
+	}
+
+	.article-head .pf-head-title h1 { margin-bottom: 0; }
+
+/* A comfortable reading measure, narrower than the module grid. */
+.article-body {
+	max-width: 44em;
+	font-size: 1.0625rem;
+	line-height: 1.72;
+	color: var(--c-ink-muted);
+}
+
+	.article-body > *:first-child { margin-top: 0; }
+
+	.article-body h2 {
+		font-family: var(--f-body);
+		font-weight: 600;
+		font-size: 1.5rem;
+		letter-spacing: 0;
+		text-transform: none;
+		color: var(--c-ink-deep);
+		margin: 2.75rem 0 0.9rem 0;
+		padding-bottom: 0.55rem;
+		border-bottom: 1px solid var(--c-border-soft);
+	}
+
+	.article-body h3 {
+		font-family: var(--f-display);
+		font-weight: 600;
+		font-size: 0.8125rem;
+		letter-spacing: 0.14em;
+		text-transform: uppercase;
+		color: var(--c-ink-faint);
+		margin: 2rem 0 0.7rem 0;
+	}
+
+	.article-body p { margin: 0 0 1.35rem 0; }
+
+	.article-body strong { color: var(--c-ink); font-weight: 600; }
+
+	.article-body ul,
+	.article-body ol { margin: 0 0 1.35rem 0; padding-left: 1.3rem; }
+
+		.article-body li { margin-bottom: 0.6rem; padding-left: 0.3rem; }
+
+		.article-body ul li { list-style: none; position: relative; }
+
+			.article-body ul li:before {
+				content: "";
+				position: absolute;
+				left: -1rem;
+				top: 0.72em;
+				width: 5px;
+				height: 1px;
+				background: var(--c-accent);
+			}
+
+		.article-body ol { list-style: decimal; }
+
+	.article-body hr {
+		border: 0;
+		height: 1px;
+		background: var(--c-border-soft);
+		margin: 2.5rem 0;
+	}
+
+	/* Figures sit in a bordered plate like the portfolio's, captioned
+	   in the label type. Plots on white are inverted; those already
+	   dark are left alone (see .figure-asis). */
+	.article-body .figure {
+		margin: 2rem 0;
+		max-width: none;
+		text-align: left;
+	}
+
+		.article-body .figure img {
+			display: block;
+			width: 100%;
+			height: auto;
+			border-radius: 0;
+			box-shadow: none;
+			border: 1px solid var(--c-border-soft);
+			background: var(--c-surface-sunk);
+			filter: invert(1) hue-rotate(180deg) saturate(0.85);
+		}
+
+		.article-body .figure.figure-asis img { filter: none; }
+
+		.article-body .figure figcaption {
+			font-family: var(--f-display);
+			font-size: 0.75rem;
+			line-height: 1.55;
+			letter-spacing: 0.02em;
+			color: var(--c-ink-fainter);
+			font-style: normal;
+			text-align: left;
+			margin-top: 0.7rem;
+		}
+
+	.article-body pre {
+		background: var(--c-surface-sunk);
+		border: 1px solid var(--c-border-soft);
+		border-radius: 2px;
+		padding: 1rem 1.15rem;
+		font-size: 0.8125rem;
+		line-height: 1.6;
+		margin: 0 0 1.35rem 0;
+	}
+
+	.article-body code {
+		font-size: 0.85em;
+		background: var(--c-surface-sunk);
+		border: 1px solid var(--c-border-soft);
+		border-radius: 2px;
+		padding: 0.1rem 0.3rem;
+		color: var(--c-ink);
+	}
+
+		.article-body pre code {
+			background: none;
+			border: 0;
+			padding: 0;
+			font-size: 1em;
+		}
+
+.article-foot {
+	margin-top: 3rem;
+	padding-top: 1.75rem;
+	border-top: 1px solid var(--c-border-soft);
+}
+
+	#main .article-back {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.45rem;
+		padding: 0.4rem 0.75rem;
+		border: 1px solid var(--c-status-edge);
+		border-bottom: 1px solid var(--c-status-edge);
+		border-radius: 2px;
+		background: rgba(111, 208, 189, 0.06);
+		font-family: var(--f-display);
+		font-size: 0.8125rem;
+		font-weight: 500;
+		color: var(--c-accent-bright);
+		transition: background 0.15s ease, border-color 0.15s ease;
+	}
+
+		#main .article-back:before { content: "\2190"; opacity: 0.65; }
+
+		#main .article-back:hover {
+			background: rgba(111, 208, 189, 0.13);
+			border-color: var(--c-accent);
+			border-bottom-color: var(--c-accent);
+		}
+
+@media screen and (max-width: 736px) {
+	.article-head .pf-head-title { padding: 1.75rem 1.5rem; }
+	.article-body { font-size: 1rem; }
+}
