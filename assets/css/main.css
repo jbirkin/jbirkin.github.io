@@ -5111,13 +5111,65 @@ input, select, textarea {
 	.pf-links {
 		display: flex;
 		flex-wrap: wrap;
-		gap: 1rem;
+		align-items: center;
+		gap: 0.5rem;
 		font-family: var(--f-display);
-		font-size: 0.78rem;
+		font-size: 0.8125rem;
 	}
 
-		.pf-links a { border-bottom: 1px solid rgba(111, 208, 189, 0.35); }
-		.pf-links .pf-closed { color: var(--c-ink-fainter); font-style: italic; }
+		/* Links are the point of a portfolio entry, so they read as
+		   destinations rather than as metadata: a bordered chip with a
+		   trailing arrow, sized to sit above the tech chips. */
+		#main .pf-links a {
+			display: inline-flex;
+			align-items: center;
+			gap: 0.4rem;
+			padding: 0.3rem 0.6rem;
+			border: 1px solid var(--c-status-edge);
+			border-bottom: 1px solid var(--c-status-edge);
+			border-radius: 2px;
+			background: rgba(111, 208, 189, 0.06);
+			color: var(--c-accent-bright);
+			font-weight: 500;
+			letter-spacing: 0.02em;
+			transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+		}
+
+			#main .pf-links a:after {
+				content: "\2192";
+				font-size: 0.9em;
+				opacity: 0.65;
+				transition: transform 0.15s ease, opacity 0.15s ease;
+			}
+
+			#main .pf-links a:hover {
+				background: rgba(111, 208, 189, 0.13);
+				border-color: var(--c-accent);
+				border-bottom-color: var(--c-accent);
+				color: var(--c-accent-bright);
+			}
+
+				#main .pf-links a:hover:after { transform: translateX(2px); opacity: 1; }
+
+		#main .pf-research .pf-links a {
+			border-color: var(--c-status-edge-2);
+			border-bottom-color: var(--c-status-edge-2);
+			background: rgba(201, 168, 106, 0.06);
+			color: var(--c-accent-2);
+		}
+
+			#main .pf-research .pf-links a:hover {
+				background: rgba(201, 168, 106, 0.13);
+				border-color: var(--c-accent-2);
+				border-bottom-color: var(--c-accent-2);
+			}
+
+		.pf-links .pf-closed {
+			color: var(--c-ink-fainter);
+			font-style: italic;
+			font-size: 0.75rem;
+			padding-left: 0.25rem;
+		}
 
 /* Figures are matplotlib plots flattened onto white; inverting sits
    them on the dark ground without regenerating the sources. */
