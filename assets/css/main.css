@@ -205,7 +205,7 @@ input, select, textarea {
 
 	body, input, select, textarea {
 		font-family: var(--f-body);
-		font-weight: 300;
+		font-weight: 400;
 		font-size: 1rem;
 		line-height: 2.375;
 	}
@@ -2976,7 +2976,7 @@ input, select, textarea {
 		}
 
 		header > p {
-			font-style: italic;
+			font-style: normal;
 		}
 
 		header > h1 + p {
@@ -3445,8 +3445,10 @@ input, select, textarea {
 		}
 
 		#intro p {
-			font-size: 1.25rem;
-			font-style: italic;
+			font-size: 1.3rem;
+			font-weight: 500;
+			font-style: normal;
+			letter-spacing: 0.02em;
 			margin-top: -0.25rem;
 			text-align: center;
 		}
