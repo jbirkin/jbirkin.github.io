@@ -5374,6 +5374,37 @@ input, select, textarea {
 
 	.article-head .pf-head-title h1 { margin-bottom: 0; }
 
+/* Shown on a post while its real content is still bracketed
+   placeholder text, so a visitor who clicks through from the
+   portfolio isn't left staring at draft notes with no context. */
+.article-wip {
+	display: flex;
+	align-items: baseline;
+	gap: 0.9rem;
+	flex-wrap: wrap;
+	background: rgba(224, 196, 137, 0.07);
+	border: 1px solid var(--c-status-edge-2);
+	border-radius: 2px;
+	padding: 0.9rem 1.25rem;
+	margin-bottom: 2rem;
+}
+
+	.article-wip-label {
+		font-family: var(--f-display);
+		font-weight: 600;
+		font-size: 0.66rem;
+		letter-spacing: 0.14em;
+		text-transform: uppercase;
+		color: var(--c-accent-2);
+		white-space: nowrap;
+	}
+
+	.article-wip p {
+		margin: 0;
+		font-size: 0.9rem;
+		color: var(--c-ink-muted);
+	}
+
 /* A comfortable reading measure, narrower than the module grid. */
 .article-body {
 	max-width: 44em;

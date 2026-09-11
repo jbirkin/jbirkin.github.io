@@ -4,6 +4,7 @@ title: "Putting an LLM Pipeline under Test"
 date: 2026-09-09
 categories: data-science
 author: Jack Birkin
+wip: true
 ---
 
 ## The problem

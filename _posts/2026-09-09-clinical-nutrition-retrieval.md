@@ -4,6 +4,7 @@ title: "Retrieval over a 3,500-Page Clinical Nutrition Reference"
 date: 2026-09-09
 categories: data-science
 author: Jack Birkin
+wip: true
 ---
 
 ## The problem

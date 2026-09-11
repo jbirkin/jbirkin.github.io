@@ -4,6 +4,7 @@ title: "Per-Member Recipe Adaptation over a Knowledge Graph"
 date: 2026-09-09
 categories: data-science
 author: Jack Birkin
+wip: true
 ---
 
 ## The problem

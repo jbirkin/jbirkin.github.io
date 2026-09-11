@@ -54,6 +54,13 @@
                 </div>
             </div>
 
+            {% if page.wip %}
+            <div class="article-wip">
+                <span class="article-wip-label">Under construction</span>
+                <p>This write-up is still being drafted &mdash; check back soon for the full story.</p>
+            </div>
+            {% endif %}
+
             <article class="article-body">
                 {{ content }}
             </article>
