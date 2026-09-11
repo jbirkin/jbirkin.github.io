@@ -19,6 +19,7 @@
 	--c-surface-raised: #0f151d;
 	--c-surface-sunk: #0a0f15;
 	--c-accent-2: #e0c489;
+	--c-accent-3: #b39ddb;
 	--c-surface-card: #0d1219;
 	--c-accent-2-wash: #243039;
 	--c-accent-wash: #1c242e;
@@ -50,6 +51,7 @@
 	--c-surface-raised: #f9f9f9;
 	--c-surface-sunk: #eaeaea;
 	--c-accent-2: #6c5ce7;
+	--c-accent-3: #6c5ce7;
 	--c-surface-card: #f4f4f4;
 	--c-accent-2-wash: #e2daf5;
 	--c-accent-wash: #dfe6f3;
@@ -4845,12 +4847,12 @@ input, select, textarea {
 }
 /* ---------------------------------------------------------------
    Portfolio modules
-   Follows the design mockup: a bordered title block with a readouts
+   Follows the design mockup: a bordered title block with a top-skills
    panel, then project modules on a hairline grid. Section rules fade
    from the accent colour rather than running solid.
    --------------------------------------------------------------- */
 
-/* Title block: title and intro left, readouts right, one bordered row. */
+/* Title block: title and intro left, top skills right, one bordered row. */
 .pf-head {
 	display: grid;
 	grid-template-columns: minmax(0, 1.34fr) minmax(0, 1fr);
@@ -4892,19 +4894,19 @@ input, select, textarea {
 		margin: 0;
 	}
 
-	.pf-readouts { display: flex; flex-direction: column; }
+	.pf-skills { display: flex; flex-direction: column; }
 
-		.pf-readouts-label {
+		.pf-skills-label {
 			padding: 1rem 1.75rem 0.85rem 1.75rem;
 			border-bottom: 1px solid var(--c-border-soft);
 			font-family: var(--f-display);
 			font-size: 0.59rem;
 			letter-spacing: 0.22em;
 			text-transform: uppercase;
-			color: var(--c-ink-fainter);
+			color: var(--c-accent-3);
 		}
 
-		.pf-readouts-grid {
+		.pf-skills-list {
 			display: grid;
 			grid-template-columns: repeat(2, minmax(0, 1fr));
 			gap: 1px;
@@ -4912,27 +4914,36 @@ input, select, textarea {
 			flex: 1;
 		}
 
-			.pf-readouts-grid > div {
+			.pf-skill {
 				background: var(--c-surface);
-				padding: 1.25rem 1.6rem;
+				padding: 1.1rem 1.4rem;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
 			}
 
-			.pf-readout-n {
-				font-family: var(--f-display);
-				font-size: 1.6875rem;
-				line-height: 1;
-				letter-spacing: -0.01em;
-				color: var(--c-accent-bright);
-			}
+				.pf-skill-name {
+					font-family: var(--f-display);
+					font-weight: 600;
+					font-size: 0.92rem;
+					letter-spacing: 0.01em;
+					color: var(--c-ink);
+					margin-bottom: 0.3rem;
+				}
 
-			.pf-readout-l {
-				font-family: var(--f-display);
-				font-size: 0.59rem;
-				letter-spacing: 0.16em;
-				text-transform: uppercase;
-				color: var(--c-ink-fainter);
-				margin-top: 0.4rem;
-			}
+				.pf-skill a {
+					display: inline-block;
+					font-family: var(--f-display);
+					font-size: 0.66rem;
+					letter-spacing: 0.05em;
+					border-bottom: 0;
+					transition: filter 0.15s ease;
+				}
+
+					.pf-skill a:hover { filter: brightness(1.25); }
+
+				#main .pf-skills .pf-skill-ai a { color: var(--c-accent); }
+				#main .pf-skills .pf-skill-research a { color: var(--c-accent-2); }
 
 /* Section heads: letter, name in EB Garamond, note, then a rule that
    runs out to the right. */

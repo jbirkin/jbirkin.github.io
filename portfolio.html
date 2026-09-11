@@ -60,13 +60,13 @@
                             <li>Secondly, my astronomy research work. The projects I describe are largely data-science flavored with a publication available describing the methodology and results. Furthermore, the majority of the code I wrote is open-source and available on GitHub.</li>
                         </ol>
                 </div>
-                <div class="pf-readouts">
-                    <div class="pf-readouts-label">Readouts</div>
-                    <div class="pf-readouts-grid">
-                        <div><div class="pf-readout-n">355</div><div class="pf-readout-l">Hermetic tests</div></div>
-                        <div><div class="pf-readout-n">3,500</div><div class="pf-readout-l">Pages indexed</div></div>
-                        <div><div class="pf-readout-n">5</div><div class="pf-readout-l">First-author papers</div></div>
-                        <div><div class="pf-readout-n">1</div><div class="pf-readout-l">AI engineer on product</div></div>
+                <div class="pf-skills">
+                    <div class="pf-skills-label">Top skills</div>
+                    <div class="pf-skills-list">
+                        <div class="pf-skill pf-skill-ai"><div class="pf-skill-name">LLM pipeline design</div><a href="#amelia">Amelia&nbsp;&rarr;</a></div>
+                        <div class="pf-skill pf-skill-ai"><div class="pf-skill-name">Retrieval systems</div><a href="#clinical-nutrition-retrieval">Clinical nutrition retrieval&nbsp;&rarr;</a></div>
+                        <div class="pf-skill pf-skill-research"><div class="pf-skill-name">Statistical modeling</div><a href="#weak-signal-aggregation">Weak-signal aggregation pipeline&nbsp;&rarr;</a></div>
+                        <div class="pf-skill pf-skill-research"><div class="pf-skill-name">Spectral data modeling</div><a href="#adaptive-binning-fitter">Adaptive-binning model fitter&nbsp;&rarr;</a></div>
                     </div>
                 </div>
             </div>
@@ -81,7 +81,7 @@
                 </div>
                 <div class="pf-rule"></div>
                 <div class="pf-grid pf-grid-3">
-                <div class="pf-module">
+                <div class="pf-module" id="amelia">
                     <div class="pf-module-meta">
                         <span>01 &middot; 2025 &mdash;</span>
                         <span class="pf-status">Proprietary</span>
@@ -93,9 +93,9 @@
                             <div class="pf-tagline">Per-member recipe adaptation over a knowledge graph.</div>
                         </div>
                         <dl class="pf-slots">
-                            <div><dt>Problem</dt><dd>[One or two sentences: what was hard, and for whom.]</dd></div>
-                            <div><dt>Approach</dt><dd>[One or two sentences: how it was built and why that way.]</dd></div>
-                            <div><dt>Outcome</dt><dd>[One or two sentences: what it does now and who uses it.]</dd></div>
+                            <div><dt>Problem</dt><dd>Families can have conflicting dietary requirements which complicate meal planning.</dd></div>
+                            <div><dt>Approach</dt><dd>Use a knowledge graph to track ingredient compliance and produce the simplest recipe that meets all dietary needs.</dd></div>
+                            <div><dt>Outcome</dt><dd>Amelia can now adapt recipes for any number of family members and dietary restrictions. The knowledge graph runs in the production app.</dd></div>
                         </dl>
                         <div class="pf-foot">
                             <div class="pf-chips"><span>LangGraph</span><span>FastAPI</span><span>Azure</span><span>pgvector</span></div>
@@ -103,7 +103,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="pf-module">
+                <div class="pf-module" id="clinical-nutrition-retrieval">
                     <div class="pf-module-meta">
                         <span>02 &middot; 2025 &mdash;</span>
                         <span class="pf-status">Proprietary</span>
@@ -115,9 +115,9 @@
                             <div class="pf-tagline">Grounded answers over a 3,500-page reference manual.</div>
                         </div>
                         <dl class="pf-slots">
-                            <div><dt>Problem</dt><dd>[One or two sentences: what was hard, and for whom.]</dd></div>
-                            <div><dt>Approach</dt><dd>[One or two sentences: how it was built and why that way.]</dd></div>
-                            <div><dt>Outcome</dt><dd>[One or two sentences: what it does now and who uses it.]</dd></div>
+                            <div><dt>Problem</dt><dd>Early versions of the Amelia chat engine relied on pure recall, answering clinical nutrition questions from the model's own training-time knowledge. That risked plausible-sounding answers that were not grounded in real clinical knowledge.</dd></div>
+                            <div><dt>Approach</dt><dd>Build a retrieval pipeline over the 3500-page Nutrition Care Manual and wired it into the existing chat endpoint.</dd></div>
+                            <div><dt>Outcome</dt><dd>Answers are now grounded in an actual dietitian reference manual.</dd></div>
                         </dl>
                         <div class="pf-foot">
                             <div class="pf-chips"><span>pgvector</span><span>Postgres</span><span>PDF ingestion</span></div>
@@ -137,8 +137,8 @@
                             <div class="pf-tagline">A pipeline put under test and made observable.</div>
                         </div>
                         <dl class="pf-slots">
-                            <div><dt>Problem</dt><dd>[One or two sentences: what was hard, and for whom.]</dd></div>
-                            <div><dt>Approach</dt><dd>[One or two sentences: how it was built and why that way.]</dd></div>
+                            <div><dt>Problem</dt><dd>It is crucial to understand health-based LLM output, as incorrect information can have disastrous consequences. This is particularly true as the LLM output is non-deterministic.</dd></div>
+                            <div><dt>Approach</dt><dd>Build a set of gold standard test recipes and families, where the correct answer is known, and use these to anchor future changes to the pipeline. Also implement LangSmith monitoring to fully capture LLM responses for ongoing testing.</dd></div>
                             <div><dt>Outcome</dt><dd>[One or two sentences: what it does now and who uses it.]</dd></div>
                         </dl>
                         <div class="pf-foot">
@@ -163,7 +163,7 @@
                 <p class="pf-intro">Fuller detail, including papers and data, is on the <a href="astro.html">astronomy page</a>.</p>
 
                 <div class="pf-grid">
-                <div class="pf-module pf-wide">
+                <div class="pf-module pf-wide" id="adaptive-binning-fitter">
                     <div class="pf-module-meta">
                         <span>04 &middot; 2022&ndash;2024</span>
                         <span class="pf-status">Open source</span>
@@ -172,13 +172,13 @@
                     <div class="pf-plate"><img src="images/birkin23_plots_flat.jpg" alt="Spatially resolved metallicity maps produced with cubespecfit"/></div>
                     <div class="pf-module-body">
                         <div>
-                            <h3>cubespecfit</h3>
+                            <h3>Adaptive-binning model fitter</h3>
                             <div class="pf-tagline">Spaxel-by-spaxel emission-line fitting for 3-D data cubes.</div>
                         </div>
                         <dl class="pf-slots">
-                            <div><dt>Problem</dt><dd>[One or two sentences: what was hard, and for whom.]</dd></div>
-                            <div><dt>Approach</dt><dd>[One or two sentences: how it was built and why that way.]</dd></div>
-                            <div><dt>Outcome</dt><dd>[One or two sentences: what it does now and who uses it.]</dd></div>
+                            <div><dt>Problem</dt><dd>Fitting emission models to 3-D cubes is difficult in low S/N regions, and visualizing the fit results is non-trivial.</dd></div>
+                            <div><dt>Approach</dt><dd>Adaptive binning throughout the cube to boost S/N where necessary, and visualize the results as a grid.</dd></div>
+                            <div><dt>Outcome</dt><dd>An open source Python module used by collaborators and in two of my research publications.</dd></div>
                         </dl>
                         <div class="pf-foot">
                             <div class="pf-chips"><span>Python</span><span>numpy</span><span>astropy</span><span>MCMC</span></div>
@@ -186,7 +186,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="pf-module">
+                <div class="pf-module" id="weak-signal-aggregation">
                     <div class="pf-module-meta">
                         <span>05 &middot; 2023&ndash;2025</span>
                         <span class="pf-status">Open source</span>
@@ -194,13 +194,13 @@
                     <div class="pf-module-rule"></div>
                     <div class="pf-module-body">
                         <div>
-                            <h3>alma-stacking-pipeline</h3>
+                            <h3>Weak-signal aggregation pipeline</h3>
                             <div class="pf-tagline">Aggregating weak spectra into a measurable signal.</div>
                         </div>
                         <dl class="pf-slots">
-                            <div><dt>Problem</dt><dd>[One or two sentences: what was hard, and for whom.]</dd></div>
-                            <div><dt>Approach</dt><dd>[One or two sentences: how it was built and why that way.]</dd></div>
-                            <div><dt>Outcome</dt><dd>[One or two sentences: what it does now and who uses it.]</dd></div>
+                            <div><dt>Problem</dt><dd>A single galaxy's [CII] spectrum is often too faint to reveal outflow signatures — the signal only becomes visible once you combine many galaxies' spectra together, and combining them wrong can manufacture a signal that isn't real.</dd></div>
+                            <div><dt>Approach</dt><dd>Built a pipeline that aligns, normalizes and combines spectra using multiple normalization schemes side by side, then uses MCMC fitting and bootstrap resampling to check whether a detected feature survives removing any single source.</dd></div>
+                            <div><dt>Outcome</dt><dd>Used to detect a faint outflow signature across 15 galaxies in the CRISTAL survey (Birkin et al. 2025)</dd></div>
                         </dl>
                         <div class="pf-foot">
                             <div class="pf-chips"><span>Python</span><span>MCMC</span><span>bootstrap</span></div>
@@ -220,9 +220,9 @@
                             <div class="pf-tagline">A Dash tool a distributed team reviewed candidates in.</div>
                         </div>
                         <dl class="pf-slots">
-                            <div><dt>Problem</dt><dd>[One or two sentences: what was hard, and for whom.]</dd></div>
-                            <div><dt>Approach</dt><dd>[One or two sentences: how it was built and why that way.]</dd></div>
-                            <div><dt>Outcome</dt><dd>[One or two sentences: what it does now and who uses it.]</dd></div>
+                            <div><dt>Problem</dt><dd>Reviewing large catalogs for proposal candidates is often inefficient and time-consuming. Proper tooling does not exist.</dd></div>
+                            <div><dt>Approach</dt><dd>Built a Dash tool combining a catalog of over 200000 galaxies with multi-wavelength images. Hosted with AWS, enabled asynchronous note taking.</dd></div>
+                            <div><dt>Outcome</dt><dd>Team members can inspect data on their own time. More efficient target selection for proposals.</dd></div>
                         </dl>
                         <div class="pf-foot">
                             <div class="pf-chips"><span>Plotly Dash</span><span>AWS</span><span>Python</span></div>
@@ -242,9 +242,9 @@
                             <div class="pf-tagline">Cross-matching multi-wavelength surveys at scale.</div>
                         </div>
                         <dl class="pf-slots">
-                            <div><dt>Problem</dt><dd>[One or two sentences: what was hard, and for whom.]</dd></div>
-                            <div><dt>Approach</dt><dd>[One or two sentences: how it was built and why that way.]</dd></div>
-                            <div><dt>Outcome</dt><dd>[One or two sentences: what it does now and who uses it.]</dd></div>
+                            <div><dt>Problem</dt><dd>Finding the most distant dusty galaxies meant cross-matching candidates across three catalogs (SPT3G, MeerKAT, SPIRE) at once, where the interesting sources are often right at each survey's detection limit.</dd></div>
+                            <div><dt>Approach</dt><dd>Used targeted SQL joins across the three catalogs to flag candidate signatures like SPIRE non-detections paired with faint MeerKAT detections, then filtered out sources below each survey's known confusion limit.</dd></div>
+                            <div><dt>Outcome</dt><dd>Used this to build the candidate shortlist for my SPT3G high-redshift search, filtering out sources that looked interesting but sat below what the survey could actually resolve.</dd></div>
                         </dl>
                         <div class="pf-foot">
                             <div class="pf-chips"><span>SQL</span><span>pandas</span></div>
@@ -264,9 +264,9 @@
                             <div class="pf-tagline">2-D kinematics and rotation curves of star-forming galaxies.</div>
                         </div>
                         <dl class="pf-slots">
-                            <div><dt>Problem</dt><dd>[One or two sentences: what was hard, and for whom.]</dd></div>
-                            <div><dt>Approach</dt><dd>[One or two sentences: how it was built and why that way.]</dd></div>
-                            <div><dt>Outcome</dt><dd>[One or two sentences: what it does now and who uses it.]</dd></div>
+                            <div><dt>Problem</dt><dd>Extracting reliable 2-D velocity measurements from faint, high-redshift galaxies is very difficult.</dd></div>
+                            <div><dt>Approach</dt><dd>Led the reduction pipeline for the survey — adapting a PCA-based sky-subtraction algorithm originally built for a different instrument (MUSE) to work on KMOS data — then fit rotation curves and velocity-dispersion maps, cross-validating 2-D fits against full 3-D forward models.</dd></div>
+                            <div><dt>Outcome</dt><dd>Delivered resolved kinematics for 27 galaxies, published in Birkin et al. 2024 — part of a Large Programme I helped design, now covering roughly 400 targets.</dd></div>
                         </dl>
                         <div class="pf-foot">
                             <div class="pf-chips"><span>KMOS</span><span>modelling</span><span>Python</span></div>
