@@ -39,6 +39,6 @@ The findings contributed to [this peer-reviewed publication in MNRAS](https://ui
 
 ## Try It Yourself
 
-If you’re working with IFU data and looking for ways to model galaxy kinematics, I’m happy to share code snippets or tools used in this project. Whether you're dealing with adaptive binning, velocity field extraction, or rotation curve fitting, feel free to [reach out](mailto:your.email@example.com) or start a discussion on GitHub.
+If you’re working with IFU data and looking for ways to model galaxy kinematics, I’m happy to share code snippets or tools used in this project. Whether you're dealing with adaptive binning, velocity field extraction, or rotation curve fitting, feel free to [reach out](mailto:jbirkin10@gmail.com) or start a discussion on GitHub.
 
 <p style="font-size: 0.9em; color: #888; font-style: italic;">Published: February 2025</p>
