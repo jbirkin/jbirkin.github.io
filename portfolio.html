@@ -139,7 +139,7 @@
                         <dl class="pf-slots">
                             <div><dt>Problem</dt><dd>It is crucial to understand health-based LLM output, as incorrect information can have disastrous consequences. This is particularly true as the LLM output is non-deterministic.</dd></div>
                             <div><dt>Approach</dt><dd>Build a set of gold standard test recipes and families, where the correct answer is known, and use these to anchor future changes to the pipeline. Also implement LangSmith monitoring to fully capture LLM responses for ongoing testing.</dd></div>
-                            <div><dt>Outcome</dt><dd>[One or two sentences: what it does now and who uses it.]</dd></div>
+                            <div><dt>Outcome</dt><dd>Changes to the pipeline can now be made with confidence, because regressions show up against the gold standards before they ever reach a dietitian.</dd></div>
                         </dl>
                         <div class="pf-foot">
                             <div class="pf-chips"><span>pytest</span><span>LangSmith</span><span>CI</span></div>
